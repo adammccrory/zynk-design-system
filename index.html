@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Zynk Design System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Inter Tight', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@700&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { scroll-behavior: smooth; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter Tight', sans-serif; font-weight: 700; }
+    body { font-family: 'Inter', sans-serif; }
+
+    ::selection {
+      background: #f97316;
+      color: #ffffff;
+    }
+    ::-moz-selection {
+      background: #f97316;
+      color: #ffffff;
+    }
+
+    /* Exact glow-hero effect from new.zynk.com */
+    .glow-hero {
+      background-image:
+        radial-gradient(40% 55% at 28% 22%, rgb(249 115 22 / 0.55) 0%, transparent 60%),
+        radial-gradient(38% 50% at 56% 14%, rgb(217 70 239 / 0.42) 0%, transparent 62%),
+        radial-gradient(34% 48% at 82% 26%, rgb(139 92 246 / 0.40) 0%, transparent 62%),
+        radial-gradient(40% 52% at 10% 30%, rgb(56 189 248 / 0.34) 0%, transparent 64%);
+      filter: blur(56px);
+      animation: aurora-drift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes aurora-drift {
+      0%   { transform: translate3d(-12%, -4%, 0) scale(1.2); }
+      50%  { transform: translate3d(8%, 4%, 0) scale(1.4); }
+      100% { transform: translate3d(12%, -2%, 0) scale(1.3); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glow-hero { animation: none; }
+    }
+</style>
+<script defer="" src="https://unpkg.com/lucide@latest"></script></head>
+<body class="min-h-full bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 transition-colors">
+<div class="min-h-screen">
+<header class="sticky top-0 z-40 border-b border-neutral-200 bg-neutral-50/90 backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/90">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+<div class="flex items-center gap-3">
+<div>
+<div class="heading text-lg">Zynk Design System</div>
+<div class="text-sm text-neutral-500 dark:text-neutral-400">Kitchen sink · Neutral + Orange</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="hidden text-sm text-neutral-500 dark:text-neutral-400 sm:inline">Inter Tight 700 headings</span>
+<button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700" id="themeToggle">
+            Toggle theme
+          </button>
+</div>
+</div>
+</header>
+<main class="mx-auto max-w-7xl space-y-10 px-6 py-10">
+<section class="mx-auto max-w-7xl py-10" id="table-of-contents"><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="max-w-3xl"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Quick reference</div><h2 class="heading mt-2 text-2xl">Table of contents</h2><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">A compact index of the design system for people, developers and AI tools.</p></div><nav aria-label="Design system table of contents" class="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3"><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#integrate-automate-grow"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">01</span><span>Integrate. Automate. Grow.</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#tokens"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">02</span><span>Core tokens</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#buttons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">03</span><span>Buttons &amp; badges</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#callout"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">04</span><span>Website Callout</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">05</span><span>Clear content hierarchy for every section</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern-image"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">06</span><span>Pair strong content with supporting imagery</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#steps"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">07</span><span>Steps</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#alerts"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">08</span><span>Status alerts</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#workflows"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">09</span><span>Recent workflows</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#typography"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">10</span><span>Typography</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#icons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">11</span><span>Lucide icons</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#lists"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">12</span><span>Lists</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#quotes"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">13</span><span>Quotes</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#faqs"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">14</span><span>Frequently asked questions</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#aurora"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">15</span><span>Zynk Aurora</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#code-blocks"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">16</span><span>Code blocks</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#navbar"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">17</span><span>Navigation bar</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#mega-menu"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">18</span><span>Mega menu</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#footer-example"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">19</span><span>Footer</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#practical-guidelines"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">20</span><span>Patterns for consistent Zynk experiences</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#colours"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">21</span><span>Colour reference</span></a></nav></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="grid gap-6 lg:grid-cols-[1.4fr_.6fr]" id="integrate-automate-grow">
+<div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+<span class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-sm font-semibold text-orange-600 dark:text-orange-400">Zynk UI</span>
+<h1 class="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Integrate. Automate. <span class="text-orange-500">Grow.</span></h1>
+<p class="mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">A reference page showing the full Neutral + Orange visual language across light and dark themes.</p>
+<div class="mt-6 flex flex-wrap gap-3">
+<button class="rounded-full bg-orange-500 px-5 py-1.5 text-base font-semibold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900">Primary action</button>
+<button class="rounded-full border border-neutral-300 bg-white px-5 py-1.5 text-base font-semibold text-neutral-900 hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700">Secondary</button>
+<button class="rounded-full px-5 py-1.5 text-base font-semibold text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700">Ghost</button>
+</div>
+</div>
+<div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10">
+<h2 class="text-xl">Featured callout</h2>
+<p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">Orange-tinted cards are reserved for important callouts, upgrades, announcements and premium features.</p>
+<div class="mt-5 rounded-xl bg-white/80 p-4 text-sm dark:bg-neutral-900/40">Keep normal cards neutral so orange remains meaningful.</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section id="tokens">
+<div class="mb-4 flex items-end justify-between gap-4">
+<div>
+<h2 class="text-2xl">Core tokens</h2>
+<p class="mt-1 text-neutral-500 dark:text-neutral-400">Primary surfaces, text and brand colours.</p>
+</div>
+</div>
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900"><div class="text-sm text-neutral-500 dark:text-neutral-400">Page background</div><div class="mt-2 font-semibold">neutral-50 / neutral-900</div></div>
+<div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm text-neutral-500 dark:text-neutral-400">Card</div><div class="mt-2 font-semibold">white / neutral-800</div></div>
+<div class="rounded-xl border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-600 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-300">Elevated surface</div><div class="mt-2 font-semibold">neutral-100 / neutral-700</div></div>
+<div class="rounded-xl border border-orange-600 bg-orange-500 p-5 text-white"><div class="text-sm text-white/80">Brand / Orange</div><div class="mt-2 font-semibold">orange-500</div><div class="mt-1 text-xs text-white/80">#f97316</div></div>
+<div class="rounded-xl border border-emerald-600 bg-emerald-500 p-5 text-white"><div class="text-sm text-white/80">Success / Green</div><div class="mt-2 font-semibold">emerald-500</div><div class="mt-1 text-xs text-white/80">#10b981</div></div>
+<div class="rounded-xl border border-red-600 bg-red-500 p-5 text-white"><div class="text-sm text-white/80">Error / Red</div><div class="mt-2 font-semibold">red-500</div><div class="mt-1 text-xs text-white/80">#ef4444</div></div>
+<div class="rounded-xl border border-blue-600 bg-blue-500 p-5 text-white"><div class="text-sm text-white/80">Information / Blue</div><div class="mt-2 font-semibold">blue-500</div><div class="mt-1 text-xs text-white/80">#3b82f6</div></div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="grid gap-6 lg:grid-cols-2" id="buttons">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="text-2xl">Buttons &amp; badges</h2>
+<div class="mt-5 flex flex-wrap gap-3">
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">Primary</button>
+<button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-semibold hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:hover:bg-neutral-700">Secondary</button>
+<button class="rounded-full bg-red-500 px-4 py-1 text-sm font-semibold text-white hover:bg-red-600">Delete</button>
+<button class="cursor-not-allowed rounded-full bg-neutral-200 px-4 py-1 text-sm font-semibold text-neutral-400 dark:bg-neutral-700 dark:text-neutral-500" disabled="">Disabled</button>
+</div>
+<div class="mt-6 border-t border-neutral-200 pt-5 dark:border-neutral-700">
+<div class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">Button sizes</div>
+<div class="mt-3 flex flex-wrap items-center gap-3">
+<button class="rounded-full border border-neutral-300 bg-white px-3 py-0.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700">Compact</button>
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">Default</button>
+<button class="rounded-full bg-orange-500 px-5 py-1.5 text-base font-semibold text-white hover:bg-orange-600">Large CTA</button>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">Neutral</span>
+<span class="rounded-full bg-orange-500/10 px-3 py-1 text-sm font-medium text-orange-500">Brand</span>
+<span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-500">Success</span>
+<span class="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-500">Warning</span>
+<span class="rounded-full bg-red-500/10 px-3 py-1 text-sm font-medium text-red-500">Error</span>
+<span class="rounded-full bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-500">Info</span>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="text-2xl">Form controls</h2>
+<div class="mt-5 space-y-4">
+<div>
+<label class="mb-2 block text-sm font-medium">Connection name</label>
+<input class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-500" value="Sage 200 Production"/>
+</div>
+<div>
+<label class="mb-2 block text-sm font-medium">Environment</label>
+<select class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50">
+<option>Production</option><option>Test</option>
+</select>
+</div>
+<label class="flex items-center gap-3 text-sm"><input checked="" class="h-4 w-4 rounded border-neutral-300 text-orange-500 focus:ring-orange-500 accent-orange-500" type="checkbox"/> Enable automatic sync</label>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="callout"><h2 class="font-display text-3xl font-bold leading-[115%]">Website Callout</h2><p class="mt-2 max-w-2xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Use a solid orange-500 callout for high-priority website messaging and conversion-focused sections.</p><div class="mt-8 w-full rounded-2xl bg-orange-500 p-8 text-white md:flex md:items-center md:justify-between md:gap-8"><div><h3 class="font-display text-2xl font-bold leading-[120%]">Ready to connect your systems?</h3><p class="mt-2 max-w-2xl text-base leading-[150%] text-orange-50">Automate the flow of data between ecommerce, accounting, CRM and operational systems with Zynk.</p></div><div class="mt-6 shrink-0 md:mt-0"><button class="rounded-full bg-white px-5 py-1.5 text-base font-semibold text-orange-600 hover:bg-orange-50 transition-colors">Talk to us</button></div></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="content-pattern"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content pattern</div><h2 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-[115%] text-neutral-900 dark:text-neutral-50">Clear content hierarchy for every section</h2><p class="mt-4 max-w-3xl text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a short orange eyebrow to introduce the topic, followed by an H2 and a stronger lead paragraph that communicates the main message quickly.</p><p class="mt-4 max-w-3xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Supporting body copy should provide the detail without competing with the headline. Keep paragraphs concise, use comfortable line lengths, and maintain consistent vertical spacing so content remains easy to scan across both marketing pages and product interfaces.</p></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="content-pattern-image"><div class="grid gap-8 lg:grid-cols-2 lg:items-center"><div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800"><img alt="Example content image" class="h-[420px] w-full object-cover" src="https://picsum.photos/200/300"/></div><div class="lg:pl-4"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content with image</div><h2 class="mt-3 font-display text-3xl font-bold leading-[115%] text-neutral-900 dark:text-neutral-50">Pair strong content with supporting imagery</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a balanced two-column layout when an image helps explain the story, product or outcome without overwhelming the written content.</p><p class="mt-4 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">The image should use the same rounded corners, border treatment and visual language as other cards. Keep the eyebrow, heading and paragraph hierarchy consistent with standard content sections so pages feel cohesive.</p></div></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="steps">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Process</div>
+<h2 class="heading mt-3 text-4xl">Steps</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use step cards to explain a short, linear process. Keep each step concise, use a relevant Lucide icon and place the step number subtly in the background.
+    </p>
+</div>
+<div class="mt-10 grid gap-6 lg:grid-cols-3">
+<div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">01</div>
+<div class="relative z-10">
+<i class="h-7 w-7 text-orange-500" data-lucide="message-square"></i>
+<h3 class="heading mt-6 text-xl">Tell us your systems</h3>
+<p class="mt-3 max-w-sm text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+          Share the platforms you want to connect and the data that needs to flow between them.
+        </p>
+</div>
+</div>
+<div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">02</div>
+<div class="relative z-10">
+<i class="h-7 w-7 text-orange-500" data-lucide="map"></i>
+<h3 class="heading mt-6 text-xl">We map your data</h3>
+<p class="mt-3 max-w-sm text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+          Using solution templates, we configure the connectors and transformation rules for your business.
+        </p>
+</div>
+</div>
+<div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">03</div>
+<div class="relative z-10">
+<i class="h-7 w-7 text-orange-500" data-lucide="rocket"></i>
+<h3 class="heading mt-6 text-xl">Go live in days</h3>
+<p class="mt-3 max-w-sm text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+          Your integration runs automatically, monitored, reliable and ready to scale.
+        </p>
+</div>
+</div>
+</div>
+<div class="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+<strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
+    Use three to five steps. Keep the large number decorative and low contrast, use one orange Lucide icon per step, and avoid putting buttons inside individual step cards unless an action is essential.
+  </div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section id="alerts">
+<h2 class="text-2xl">Status alerts</h2>
+<div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+<div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10"><div class="font-semibold text-emerald-700 dark:text-emerald-400">Success</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Workflow completed successfully.</p></div>
+<div class="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-500/20 dark:bg-amber-500/10"><div class="font-semibold text-amber-700 dark:text-amber-400">Warning</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Three records require attention.</p></div>
+<div class="rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-500/20 dark:bg-red-500/10"><div class="font-semibold text-red-700 dark:text-red-400">Error</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Connection authentication failed.</p></div>
+<div class="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/20 dark:bg-blue-500/10"><div class="font-semibold text-blue-700 dark:text-blue-400">Information</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">A new connector version is available.</p></div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="grid gap-6 xl:grid-cols-[1.15fr_.85fr]" id="workflows">
+<div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800">
+<div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4 dark:border-neutral-700"><div><h2 class="text-xl">Recent workflows</h2><p class="text-sm text-neutral-500 dark:text-neutral-400">Example table treatment</p></div><button class="rounded-full px-4 py-1 text-sm font-semibold text-orange-500 hover:bg-orange-50 hover:text-orange-600 dark:hover:bg-orange-500/10">View all</button></div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300"><tr><th class="px-6 py-3 font-semibold">Workflow</th><th class="px-6 py-3 font-semibold">Status</th><th class="px-6 py-3 font-semibold">Records</th><th class="px-6 py-3 font-semibold">Updated</th></tr></thead>
+<tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">Shopify → Sage 200</td><td class="px-6 py-4"><span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-500">Completed</span></td><td class="px-6 py-4">1,284</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">2 min ago</td></tr>
+<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">HubSpot → Sage Intacct</td><td class="px-6 py-4"><span class="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-500">Warning</span></td><td class="px-6 py-4">342</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">18 min ago</td></tr>
+<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">Amazon → Sage 50</td><td class="px-6 py-4"><span class="rounded-full bg-red-500/10 px-3 py-1 text-sm font-medium text-red-500">Failed</span></td><td class="px-6 py-4">89</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">41 min ago</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="text-xl">Metrics</h2>
+<div class="mt-5 grid gap-4 sm:grid-cols-2">
+<div class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-400">Transactions</div><div class="mt-2 heading text-3xl">24.8k</div><div class="mt-2 text-sm text-emerald-500">+12.4%</div></div>
+<div class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-400">Failures</div><div class="mt-2 heading text-3xl">0.7%</div><div class="mt-2 text-sm text-red-500">+0.1%</div></div>
+</div>
+<div class="mt-5 h-40 rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-900">
+<div class="flex h-full items-end gap-2">
+<div class="h-[35%] flex-1 rounded-t bg-orange-500"></div><div class="h-[55%] flex-1 rounded-t bg-blue-500"></div><div class="h-[75%] flex-1 rounded-t bg-emerald-500"></div><div class="h-[48%] flex-1 rounded-t bg-teal-500"></div><div class="h-[85%] flex-1 rounded-t bg-orange-500"></div><div class="h-[68%] flex-1 rounded-t bg-amber-500"></div><div class="h-[92%] flex-1 rounded-t bg-orange-500"></div>
+</div>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="grid gap-6 lg:grid-cols-3" id="typography">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="text-xl leading-[120%]">Typography</h2>
+<p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Headings use Inter Tight 700. Body and UI text use Inter. Line-height is shown explicitly for designer and developer handoff.</p>
+<div class="mt-6 space-y-6">
+<div><h1 class="text-5xl leading-[110%]">Heading 1</h1><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">48px · Inter Tight 700 · 110% line-height (52.8px)</p></div>
+<div><h2 class="text-4xl leading-[115%]">Heading 2</h2><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">36px · Inter Tight 700 · 115% line-height (41.4px)</p></div>
+<div><h3 class="text-3xl leading-[120%]">Heading 3</h3><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">30px · Inter Tight 700 · 120% line-height (36px)</p></div>
+<div><h4 class="text-2xl leading-[125%]">Heading 4</h4><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">24px · Inter Tight 700 · 125% line-height (30px)</p></div>
+<div><h5 class="text-xl leading-[130%]">Heading 5</h5><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">20px · Inter Tight 700 · 130% line-height (26px)</p></div>
+<div><h6 class="text-lg leading-[135%]">Heading 6</h6><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">18px · Inter Tight 700 · 135% line-height (24.3px)</p></div>
+<div class="border-t border-neutral-200 pt-5 dark:border-neutral-700"><p class="text-lg leading-[160%]">Lead / introductory paragraph text</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">18px · Inter 400 · 160% line-height (28.8px)</p></div>
+<div><p class="text-base leading-[160%]">Default paragraph and body text. This is the standard size for normal readable content across the website and application.</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">16px · Inter 400 · 160% line-height (25.6px)</p></div>
+<div><p class="text-sm leading-[150%]">Small UI, supporting and helper text</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">14px · Inter 400/500 · 150% line-height (21px)</p></div>
+<div><p class="text-xs leading-[150%]">Extra-small metadata where space is constrained</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">12px · Inter 400/500 · 150% line-height (18px)</p></div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">Progress</h2><div class="mt-5 space-y-5"><div><div class="mb-2 flex justify-between text-sm"><span>Orders synced</span><span>82%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[82%] rounded-full bg-orange-500"></div></div></div><div><div class="mb-2 flex justify-between text-sm"><span>Connection health</span><span>96%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[96%] rounded-full bg-emerald-500"></div></div></div></div></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">List group</h2><div class="mt-5 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 dark:divide-neutral-700 dark:border-neutral-700"><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Account settings</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Billing &amp; usage</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Team members</div></div></div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="mx-auto max-w-7xl py-16" id="icons">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Iconography</div>
+<h2 class="heading mt-3 text-4xl">Lucide icons</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use Lucide as the standard icon library across Zynk products and marketing. Keep icons simple, consistent and supportive of the content rather than decorative for their own sake.
+    </p>
+</div>
+<div class="mt-10 grid gap-6 lg:grid-cols-3">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Sizing</h3>
+<div class="mt-5 space-y-4">
+<div class="flex items-center gap-4">
+<i class="h-4 w-4 text-orange-500" data-lucide="circle-check"></i>
+<div><div class="text-sm font-semibold">16px</div><div class="text-sm text-neutral-500 dark:text-neutral-400">Dense UI, tables, metadata</div></div>
+</div>
+<div class="flex items-center gap-4">
+<i class="h-5 w-5 text-orange-500" data-lucide="settings"></i>
+<div><div class="text-sm font-semibold">20px</div><div class="text-sm text-neutral-500 dark:text-neutral-400">Default controls and lists</div></div>
+</div>
+<div class="flex items-center gap-4">
+<i class="h-6 w-6 text-orange-500" data-lucide="plug-zap"></i>
+<div><div class="text-sm font-semibold">24px</div><div class="text-sm text-neutral-500 dark:text-neutral-400">Feature and marketing icons</div></div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Colour</h3>
+<div class="mt-5 space-y-4">
+<div class="flex items-center gap-4"><i class="h-5 w-5 text-orange-500" data-lucide="sparkles"></i><span class="text-sm">Brand/action: <code>text-orange-500</code></span></div>
+<div class="flex items-center gap-4"><i class="h-5 w-5 text-neutral-500 dark:text-neutral-400" data-lucide="info"></i><span class="text-sm">Neutral UI: <code>neutral-500/400</code></span></div>
+<div class="flex items-center gap-4"><i class="h-5 w-5 text-emerald-500" data-lucide="circle-check"></i><span class="text-sm">Success: <code>emerald-500</code></span></div>
+<div class="flex items-center gap-4"><i class="h-5 w-5 text-amber-500" data-lucide="triangle-alert"></i><span class="text-sm">Warning: <code>amber-500</code></span></div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Usage rules</h3>
+<ul class="mt-5 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Use one icon style consistently, outlined Lucide icons.</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Match icon colour to meaning, not decoration.</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Do not mix Lucide with unrelated icon families.</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Use text labels alongside icons where meaning may be ambiguous.</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 grid gap-8 lg:grid-cols-2">
+<div>
+<h3 class="heading text-3xl">Icons in lists</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<ul class="space-y-5">
+<li class="flex gap-4">
+<div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="shopping-cart"></i>
+</div>
+<div>
+<div class="font-semibold">Connect ecommerce</div>
+<p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Synchronise orders, customers, products and inventory automatically.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="database"></i>
+</div>
+<div>
+<div class="font-semibold">Connect accounting</div>
+<p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Move clean, validated data into Sage and other finance systems.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="workflow"></i>
+</div>
+<div>
+<div class="font-semibold">Automate workflows</div>
+<p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Reduce repetitive work with dependable integration processes.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="heading text-3xl">Subtle background icon</h3>
+<div class="relative mt-6 overflow-hidden rounded-2xl bg-orange-500 p-8 text-white">
+<i class="pointer-events-none absolute -right-10 -bottom-14 h-64 w-64 text-white opacity-10" data-lucide="database"></i>
+<div class="relative z-10 max-w-lg">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-100">Automation</div>
+<h4 class="heading mt-3 text-2xl text-white">Put your integrations on autopilot</h4>
+<p class="mt-3 text-base leading-[150%] text-orange-50">
+            A large low-opacity Lucide icon can add depth to a callout without competing with the message.
+          </p>
+<button class="mt-6 rounded-full bg-white px-5 py-1.5 text-base font-semibold text-orange-600 hover:bg-orange-50">Explore workflows</button>
+</div>
+</div>
+<p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+        Keep background icons between roughly 5–12% opacity and position them partly outside the content area.
+      </p>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="lists">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content styling</div>
+<h2 class="heading mt-3 text-4xl">Lists</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a small number of consistent list patterns across marketing content, documentation and product interfaces.</p>
+</div>
+<div class="mt-10 grid gap-6 lg:grid-cols-3">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Chevron list</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Default for general feature or capability lists.</p>
+<ul class="mt-5 space-y-3">
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="chevron-right"></i>
+<span>Connect ecommerce and accounting platforms</span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="chevron-right"></i>
+<span>Automate repetitive data-entry processes</span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="chevron-right"></i>
+<span>Keep systems synchronised throughout the day</span>
+</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Tick list</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use when each item communicates a positive inclusion or benefit.</p>
+<ul class="mt-5 space-y-3">
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i>
+<span>Automatic order synchronisation</span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i>
+<span>Built-in validation and logging</span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i>
+<span>Flexible scheduling and workflows</span>
+</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Lucide icon list</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use a contextual icon when it adds meaning beyond a generic bullet.</p>
+<ul class="mt-5 space-y-4">
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="shopping-cart"></i>
+<span><strong class="font-semibold">Ecommerce</strong><br/><span class="text-sm text-neutral-500 dark:text-neutral-400">Orders, products and inventory</span></span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="database"></i>
+<span><strong class="font-semibold">Accounting</strong><br/><span class="text-sm text-neutral-500 dark:text-neutral-400">Invoices, customers and payments</span></span>
+</li>
+<li class="flex gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="users"></i>
+<span><strong class="font-semibold">CRM</strong><br/><span class="text-sm text-neutral-500 dark:text-neutral-400">Contacts and customer activity</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="text-sm font-semibold">Usage guidance</div>
+<div class="mt-4 grid gap-4 text-sm text-neutral-600 dark:text-neutral-300 md:grid-cols-3">
+<div><span class="font-semibold text-neutral-900 dark:text-neutral-50">Chevron</span><br/>General lists, capabilities and navigation-style points.</div>
+<div><span class="font-semibold text-neutral-900 dark:text-neutral-50">Tick</span><br/>Benefits, included features and confirmed capabilities.</div>
+<div><span class="font-semibold text-neutral-900 dark:text-neutral-50">Lucide icon</span><br/>Use when the icon communicates a specific concept or category.</div>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="quotes">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Editorial content</div>
+<h2 class="heading mt-3 text-4xl">Quotes</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use quotes to highlight customer feedback, expert commentary or an important statement. Keep the treatment simple and editorial rather than placing the quote inside another card.
+    </p>
+</div>
+<blockquote class="mt-10 max-w-4xl border-l-4 border-orange-500 pl-6">
+<p class="text-xl italic leading-[160%] text-neutral-700 dark:text-neutral-300">
+      “Zynk gives us one dependable integration layer between the systems our business relies on every day.”
+    </p>
+<footer class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+      Customer name · Company
+    </footer>
+</blockquote>
+<div class="mt-10 max-w-4xl border-l-4 border-orange-500 pl-6">
+<p class="text-base italic leading-[160%] text-neutral-700 dark:text-neutral-300">
+      “For shorter quotes within articles or supporting website content, use the same orange rule with standard body sizing.”
+    </p>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="faqs">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Help &amp; guidance</div>
+<h2 class="heading mt-3 text-4xl">Frequently asked questions</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use a simple accordion for FAQs. Keep questions concise, answers easy to scan and use the orange accent only for the active state.
+    </p>
+</div>
+<div class="mt-10 max-w-4xl divide-y divide-neutral-200 border-y border-neutral-200 dark:divide-neutral-700 dark:border-neutral-700">
+<details class="group" open="">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-semibold text-neutral-900 marker:content-none dark:text-neutral-50">
+        How quickly can an integration go live?
+        <i class="h-5 w-5 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-180" data-lucide="chevron-down"></i>
+</summary>
+<div class="max-w-3xl pb-5 pr-10 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+        Many standard integrations can be configured quickly using existing connectors and solution templates. More complex requirements may need additional discovery, transformation and testing.
+      </div>
+</details>
+<details class="group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-semibold text-neutral-900 marker:content-none dark:text-neutral-50">
+        Which systems can Zynk connect?
+        <i class="h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180 group-open:text-orange-500" data-lucide="chevron-down"></i>
+</summary>
+<div class="max-w-3xl pb-5 pr-10 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+        Zynk connects accounting, ecommerce, CRM, ERP, warehouse and other business platforms. The exact capabilities depend on the connector and workflow required.
+      </div>
+</details>
+<details class="group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-semibold text-neutral-900 marker:content-none dark:text-neutral-50">
+        Can workflows be customised?
+        <i class="h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180 group-open:text-orange-500" data-lucide="chevron-down"></i>
+</summary>
+<div class="max-w-3xl pb-5 pr-10 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+        Yes. Workflows can include mapping, transformation, validation and business rules so data moves between systems in the format each platform expects.
+      </div>
+</details>
+<details class="group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-semibold text-neutral-900 marker:content-none dark:text-neutral-50">
+        What happens if an integration fails?
+        <i class="h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180 group-open:text-orange-500" data-lucide="chevron-down"></i>
+</summary>
+<div class="max-w-3xl pb-5 pr-10 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">
+        Errors should be surfaced clearly through logs and status information so the cause can be identified and the affected workflow investigated.
+      </div>
+</details>
+</div>
+<p class="mt-6 max-w-4xl text-sm text-neutral-500 dark:text-neutral-400">
+<strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
+    Prefer one open item at a time on marketing pages, keep answers to a few short paragraphs, and avoid placing every FAQ inside an individual card.
+  </p>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="aurora">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Brand effect</div>
+<h2 class="heading mt-3 text-4xl">Zynk Aurora</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      This is the exact <code>.glow-hero</code> effect used by the Zynk website. It combines four blurred radial gradients and slowly drifts and scales them using transform-only animation.
+    </p>
+</div>
+<div class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 dark:border-neutral-700">
+<div class="relative min-h-[420px] overflow-hidden text-white">
+<div class="pointer-events-none absolute inset-x-0 top-0 h-[800px] overflow-hidden transform-gpu">
+<div class="glow-hero absolute -inset-x-24 -top-40 h-[70vh] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
+</div>
+<div class="relative z-10 max-w-3xl px-8 py-16">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Live website effect</div>
+<h3 class="heading mt-3 text-4xl text-white">The exact Zynk glow-hero treatment</h3>
+<p class="mt-4 max-w-2xl text-base leading-[150%] text-neutral-300">
+          The orange, magenta, violet and cyan blooms overlap behind the page header. A bottom mask fades the glow out before the clipping boundary so there is no hard edge.
+        </p>
+</div>
+</div>
+</div>
+<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="h-10 rounded-xl" style="background: rgb(249 115 22 / 0.55)"></div>
+<h3 class="heading mt-4 text-lg">Orange</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">rgb(249 115 22 / .55)</p>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">40% × 55% at 28% 22%, fades by 60%.</p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="h-10 rounded-xl" style="background: rgb(217 70 239 / 0.42)"></div>
+<h3 class="heading mt-4 text-lg">Magenta</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">rgb(217 70 239 / .42)</p>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">38% × 50% at 56% 14%, fades by 62%.</p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="h-10 rounded-xl" style="background: rgb(139 92 246 / 0.40)"></div>
+<h3 class="heading mt-4 text-lg">Violet</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">rgb(139 92 246 / .40)</p>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">34% × 48% at 82% 26%, fades by 62%.</p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="h-10 rounded-xl" style="background: rgb(56 189 248 / 0.34)"></div>
+<h3 class="heading mt-4 text-lg">Cyan</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">rgb(56 189 248 / .34)</p>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">40% × 52% at 10% 30%, fades by 64%.</p>
+</div>
+</div>
+<div class="mt-10 grid gap-8 lg:grid-cols-[1.25fr_.75fr]">
+<div class="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
+<div class="border-b border-neutral-800 px-5 py-3 font-mono text-xs text-neutral-400">global.css</div>
+<pre class="overflow-x-auto p-5 font-mono text-sm leading-[165%] text-neutral-200"><code>.glow-hero {
+  background-image:
+    radial-gradient(40% 55% at 28% 22%,
+      rgb(249 115 22 / 0.55) 0%, transparent 60%),
+    radial-gradient(38% 50% at 56% 14%,
+      rgb(217 70 239 / 0.42) 0%, transparent 62%),
+    radial-gradient(34% 48% at 82% 26%,
+      rgb(139 92 246 / 0.40) 0%, transparent 62%),
+    radial-gradient(40% 52% at 10% 30%,
+      rgb(56 189 248 / 0.34) 0%, transparent 64%);
+  filter: blur(56px);
+  animation: aurora-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-12%, -4%, 0) scale(1.2); }
+  50%  { transform: translate3d(8%, 4%, 0) scale(1.4); }
+  100% { transform: translate3d(12%, -2%, 0) scale(1.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-hero { animation: none; }
+}</code></pre>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Live placement</h3>
+<p class="mt-3 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">
+        The website does not use <code>.glow-hero</code> alone. The containing element and mask are part of the effect.
+      </p>
+<pre class="mt-5 overflow-x-auto rounded-xl bg-neutral-950 p-4 font-mono text-xs leading-[165%] text-neutral-200"><code>&lt;div class="
+  pointer-events-none
+  absolute inset-x-0 top-0
+  -z-10 h-[800px]
+  overflow-hidden transform-gpu
+"&gt;
+  &lt;div class="
+    glow-hero absolute
+    -inset-x-24 -top-40
+    h-[70vh]
+    [mask-image:linear-gradient(
+      to_bottom,
+      black_60%,
+      transparent_100%
+    )]
+  "&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<p class="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+<strong class="font-semibold text-neutral-700 dark:text-neutral-300">Rule:</strong>
+    Treat these values as the canonical Zynk Aurora. Do not substitute a simplified two-colour gradient or change the blur, opacity, animation timing, transform values or mask unless the design system is intentionally revised.
+  </p>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="code-blocks">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Technical content</div>
+<h2 class="heading mt-3 text-4xl">Code blocks</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use a monospace font for code, keep the background dark in both themes and give examples enough padding and line-height to remain easy to scan.
+    </p>
+</div>
+<div class="mt-10 grid gap-8 lg:grid-cols-[1.3fr_.7fr]">
+<div class="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
+<div class="flex items-center justify-between border-b border-neutral-800 px-5 py-3">
+<span class="font-mono text-xs font-medium text-neutral-400">example.js</span>
+<span class="rounded-full bg-neutral-800 px-3 py-1 font-mono text-xs text-neutral-400">JavaScript</span>
+</div>
+<pre class="overflow-x-auto p-5 font-mono text-sm leading-[165%] text-neutral-200"><code><span class="text-fuchsia-300">const</span> workflow = {
+  <span class="text-orange-300">source</span>: <span class="text-emerald-300">"Shopify"</span>,
+  <span class="text-orange-300">destination</span>: <span class="text-emerald-300">"Sage 200"</span>,
+  <span class="text-orange-300">enabled</span>: <span class="text-blue-300">true</span>,
+};
+
+<span class="text-fuchsia-300">await</span> runWorkflow(workflow);</code></pre>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Code style</h3>
+<ul class="mt-5 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Font:</strong> <code>font-mono</code></li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Size:</strong> 14px / <code>text-sm</code></li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Line height:</strong> 165%</li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Background:</strong> <code>neutral-950</code></li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Text:</strong> <code>neutral-200</code></li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Padding:</strong> <code>p-5</code></li>
+<li><strong class="font-semibold text-neutral-900 dark:text-neutral-50">Corners:</strong> <code>rounded-2xl</code></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 max-w-4xl">
+<p class="text-sm text-neutral-500 dark:text-neutral-400">
+      Inline code should use the same mono font at the surrounding text size, with a subtle neutral background:
+      <code class="rounded bg-neutral-100 px-1.5 py-0.5 font-mono text-[0.9em] text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">bg-neutral-100 dark:bg-neutral-800</code>
+</p>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="navbar">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Website structure</div>
+<h2 class="heading mt-3 text-4xl">Navigation bar</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use a slim horizontal navbar with clear product links, restrained secondary actions and a single orange primary CTA.
+    </p>
+</div>
+<div class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
+<nav class="flex flex-wrap items-center gap-x-6 gap-y-3 px-6 py-4 bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50">
+<a class="mr-2 shrink-0" href="#">
+<span class="heading text-2xl tracking-tight text-neutral-900 dark:text-white">zynk</span>
+</a>
+<div class="flex min-w-0 flex-1 flex-wrap items-center gap-x-6 gap-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+<a class="hover:text-orange-500" href="#">Autopilot</a>
+<a class="hover:text-orange-500" href="#">Workflow</a>
+<a class="hover:text-orange-500" href="#">Insights AI</a>
+<a class="inline-flex items-center gap-1 hover:text-orange-500" href="#">
+          Integrations
+          <i class="h-4 w-4" data-lucide="chevron-down"></i>
+</a>
+<a class="hover:text-orange-500" href="#">Solutions</a>
+<a class="hover:text-orange-500" href="#">Pricing</a>
+<a class="hover:text-orange-500" href="#">Customers</a>
+<a class="hover:text-orange-500" href="#">Articles</a>
+</div>
+<div class="ml-auto flex items-center gap-3">
+<button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">Login</button>
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">Contact us</button>
+<button aria-label="Toggle theme" class="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-500 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700">
+<i class="h-4 w-4" data-lucide="sun"></i>
+</button>
+</div>
+</nav>
+</div>
+<div class="mt-8 grid gap-6 lg:grid-cols-3">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Primary navigation</h3>
+<p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+        Keep top-level links concise. Products and high-value destinations should appear before supporting content.
+      </p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Actions</h3>
+<p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+        Use one clear orange CTA. Secondary actions such as Login should be neutral and visually quieter.
+      </p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Responsive behaviour</h3>
+<p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+        Collapse product links into a mobile menu at smaller widths. Keep the primary CTA visible where practical.
+      </p>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="mega-menu">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Navigation pattern</div>
+<h2 class="heading mt-3 text-4xl">Mega menu</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use a mega menu when a single navigation item needs to expose several related products, solutions or resources at once. Group items by category and give each destination a short description.
+    </p>
+</div>
+<div class="mt-10 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+<div class="grid gap-10 lg:grid-cols-4">
+<div>
+<div class="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-400">Products</div>
+<div class="mt-5 space-y-5">
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="cloud-cog"></i>
+</div>
+<div>
+<div class="font-semibold text-neutral-900 group-hover:text-orange-600 dark:text-neutral-50 dark:group-hover:text-orange-400">Autopilot</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Cloud integration and automation for repeatable business processes.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="workflow"></i>
+</div>
+<div>
+<div class="font-semibold text-neutral-900 group-hover:text-orange-600 dark:text-neutral-50 dark:group-hover:text-orange-400">Workflow</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Flexible on-premise integration workflows for complex requirements.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500">
+<i class="h-5 w-5" data-lucide="sparkles"></i>
+</div>
+<div>
+<div class="font-semibold text-neutral-900 group-hover:text-orange-600 dark:text-neutral-50 dark:group-hover:text-orange-400">Insights AI</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Query connected business data and generate useful insights with AI.</p>
+</div>
+</a>
+</div>
+</div>
+<div>
+<div class="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-400">Integrations</div>
+<div class="mt-5 space-y-5">
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="shopping-cart"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Ecommerce</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Shopify, WooCommerce, Amazon, eBay and more.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="landmark"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Accounting</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Sage, Xero, QuickBooks and finance platforms.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="users"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">CRM</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">HubSpot, Salesforce and customer platforms.</p>
+</div>
+</a>
+</div>
+</div>
+<div>
+<div class="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-400">Solutions</div>
+<div class="mt-5 space-y-5">
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="refresh-cw"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Order automation</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Move orders and fulfilment data between platforms.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="boxes"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Inventory sync</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Keep product and stock information aligned.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="receipt-text"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Finance automation</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Automate invoices, payments and customer records.</p>
+</div>
+</a>
+</div>
+</div>
+<div>
+<div class="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-400">Resources</div>
+<div class="mt-5 space-y-5">
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500 text-white">
+<i class="h-5 w-5" data-lucide="book-open"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Documentation</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Technical guides, setup instructions and API resources.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="life-buoy"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Support</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Get help from the Zynk support team.</p>
+</div>
+</a>
+<a class="group flex gap-4 rounded-xl p-3 transition hover:bg-neutral-50 dark:hover:bg-neutral-700/70" href="#">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+<i class="h-5 w-5" data-lucide="circle-help"></i>
+</div>
+<div>
+<div class="font-semibold group-hover:text-orange-600 dark:group-hover:text-orange-400">Knowledge base</div>
+<p class="mt-1 text-sm leading-[145%] text-neutral-500 dark:text-neutral-400">Answers, troubleshooting and common implementation guidance.</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-200 pt-6 dark:border-neutral-700">
+<div class="text-sm text-neutral-500 dark:text-neutral-400">
+        Keep descriptions to one or two lines and limit each column to the most useful destinations.
+      </div>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600" href="#">
+        View all integrations
+        <i class="h-4 w-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+<div class="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+<strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
+    Use mega menus only for genuinely broad navigation. Keep category headings short, use Lucide icons consistently, avoid more than four columns, and make the whole menu easy to scan at a glance.
+  </div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="footer-example">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Website structure</div>
+<h2 class="heading mt-3 text-4xl">Footer</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use a dark, spacious footer with clear navigation groups, a strong contact action and a separate lower bar for company information and social links.
+    </p>
+</div>
+<footer class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
+<div class="grid gap-10 px-8 py-10 lg:grid-cols-[1.5fr_repeat(4,1fr)] lg:px-10 lg:py-12">
+<div>
+<div class="heading text-3xl tracking-tight text-neutral-900 dark:text-white">zynk</div>
+<button class="mt-10 rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">
+        Get in Touch
+      </button>
+<div class="mt-7 flex flex-wrap items-center gap-3">
+<img alt="Example accreditation badge 1" class="h-16 w-16 rounded-xl border border-neutral-200 object-cover dark:border-neutral-700" src="https://picsum.photos/100?random=11"/>
+<img alt="Example accreditation badge 2" class="h-16 w-16 rounded-xl border border-neutral-200 object-cover dark:border-neutral-700" src="https://picsum.photos/100?random=12"/>
+<img alt="Example accreditation badge 3" class="h-16 w-16 rounded-xl border border-neutral-200 object-cover dark:border-neutral-700" src="https://picsum.photos/100?random=13"/>
+<img alt="Example accreditation badge 4" class="h-16 w-16 rounded-xl border border-neutral-200 object-cover dark:border-neutral-700" src="https://picsum.photos/100?random=14"/>
+</div>
+</div>
+<div>
+<div class="text-sm font-semibold text-neutral-900 dark:text-white">Explore</div>
+<ul class="mt-5 space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+<li><a class="hover:text-orange-500" href="#">Autopilot</a></li>
+<li><a class="hover:text-orange-500" href="#">Workflow</a></li>
+<li><a class="hover:text-orange-500" href="#">Integrations</a></li>
+<li><a class="hover:text-orange-500" href="#">Customers</a></li>
+<li><a class="hover:text-orange-500" href="#">Articles</a></li>
+</ul>
+</div>
+<div>
+<div class="text-sm font-semibold text-neutral-900 dark:text-white">Company</div>
+<ul class="mt-5 space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+<li><a class="hover:text-orange-500" href="#">Partners</a></li>
+<li><a class="hover:text-orange-500" href="#">About</a></li>
+<li><a class="hover:text-orange-500" href="#">Careers</a></li>
+<li><a class="hover:text-orange-500" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<div class="text-sm font-semibold text-neutral-900 dark:text-white">Resources</div>
+<ul class="mt-5 space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+<li><a class="hover:text-orange-500" href="#">Support</a></li>
+<li><a class="hover:text-orange-500" href="#">ROI Calculator</a></li>
+<li>
+<a class="inline-flex items-center gap-1 hover:text-orange-500" href="#">
+            Documentation <i class="h-3 w-3" data-lucide="external-link"></i>
+</a>
+</li>
+<li>
+<a class="inline-flex items-center gap-1 hover:text-orange-500" href="#">
+            GitHub <i class="h-3 w-3" data-lucide="external-link"></i>
+</a>
+</li>
+<li>
+<a class="inline-flex items-center gap-1 hover:text-orange-500" href="#">
+            Status <i class="h-3 w-3" data-lucide="external-link"></i>
+</a>
+</li>
+</ul>
+</div>
+<div>
+<div class="text-sm font-semibold text-neutral-900 dark:text-white">Legal</div>
+<ul class="mt-5 space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+<li><a class="hover:text-orange-500" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-orange-500" href="#">Cookie Policy</a></li>
+<li><a class="hover:text-orange-500" href="#">Cookie Settings</a></li>
+<li><a class="hover:text-orange-500" href="#">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-orange-500" href="#">AUP</a></li>
+<li><a class="hover:text-orange-500" href="#">Disclaimer</a></li>
+<li><a class="hover:text-orange-500" href="#">End User Agreement</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-neutral-200 px-8 py-7 dark:border-neutral-800 lg:px-10">
+<div class="grid items-center gap-6 text-sm text-neutral-500 dark:text-neutral-400 lg:grid-cols-[1fr_2fr_1fr]">
+<div>
+        Made with <span class="text-orange-500">♥</span> in Newcastle
+      </div>
+<div class="space-y-2 text-center">
+<div>Zynk® is a registered trademark of Zynk Software Limited 2026</div>
+<div>6-8 Charlotte Square, Newcastle upon Tyne, NE1 4XF, United Kingdom.</div>
+<div class="text-neutral-700 dark:text-neutral-300">
+          UK: +44 (0)191 820 1484   US: +1 (407) 789-2033
+        </div>
+</div>
+<div class="flex items-center gap-4 lg:justify-end">
+<a aria-label="X" class="text-neutral-500 hover:text-orange-500 dark:text-neutral-400" href="#">
+<i class="h-5 w-5" data-lucide="twitter"></i>
+</a>
+<a aria-label="LinkedIn" class="text-neutral-500 hover:text-orange-500 dark:text-neutral-400" href="#">
+<i class="h-5 w-5" data-lucide="linkedin"></i>
+</a>
+<a aria-label="GitHub" class="text-neutral-500 hover:text-orange-500 dark:text-neutral-400" href="#">
+<i class="h-5 w-5" data-lucide="github"></i>
+</a>
+<a aria-label="YouTube" class="text-neutral-500 hover:text-orange-500 dark:text-neutral-400" href="#">
+<i class="h-5 w-5" data-lucide="youtube"></i>
+</a>
+</div>
+</div>
+</div>
+</footer><p class="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+<strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
+    Keep the footer consistently dark in both themes. Use white for headings, neutral-400 for navigation, orange for hover/action states and a clear divider before company/legal information.
+  </p>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="practical-guidelines">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Practical standards</div>
+<h2 class="heading mt-3 text-4xl">Patterns for consistent Zynk experiences</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">A focused set of reusable rules for developers and marketing. Use these patterns before introducing a new treatment so Zynk websites and products continue to feel like the same family.</p>
+</div>
+<div class="mt-12">
+<h3 class="heading text-3xl">Spacing</h3>
+<p class="mt-3 max-w-3xl text-base text-neutral-500 dark:text-neutral-400">Prefer the standard spacing below. Consistency matters more than choosing a perfect individual value.</p>
+<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm font-semibold">Page section</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Desktop <code>py-16</code><br/>Compact/mobile <code>py-12</code></div></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm font-semibold">Card padding</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Standard <code>p-6</code><br/>Feature <code>p-8</code></div></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm font-semibold">Grid gap</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Standard <code>gap-6</code><br/>Large <code>gap-8</code></div></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm font-semibold">Content width</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Page <code>max-w-7xl</code><br/>Reading <code>max-w-3xl</code></div></div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="heading text-3xl">Cards</h3>
+<div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="font-semibold">Standard card</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Default container for grouped information.</p></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-neutral-300 hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600"><div class="font-semibold">Interactive card</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use when the entire card is clickable.</p><a class="mt-4 inline-block text-sm font-semibold text-orange-500 hover:text-orange-600" href="#">View details →</a></div>
+<div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10"><div class="font-semibold text-orange-700 dark:text-orange-400">Featured card</div><p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Reserve orange tinting for genuinely important content.</p></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm text-neutral-500 dark:text-neutral-400">Transactions today</div><div class="heading mt-2 text-3xl">12,480</div><div class="mt-2 text-sm font-medium text-emerald-700 dark:text-emerald-400">Healthy</div></div>
+</div>
+</div>
+<div class="mt-16 grid gap-12 lg:grid-cols-2">
+<div>
+<h3 class="heading text-3xl">Links &amp; icons</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Use orange for actionable links. Keep icons simple, consistent and subordinate to the content.</p>
+<div class="mt-5 flex flex-wrap items-center gap-6">
+<a class="font-semibold text-orange-500 hover:text-orange-600" href="#">Learn more →</a>
+<a class="font-semibold text-orange-500 underline decoration-orange-200 underline-offset-4 hover:text-orange-600" href="#">Inline text link</a>
+<div class="flex items-center gap-3 text-neutral-600 dark:text-neutral-300"><span class="inline-flex h-5 w-5 items-center justify-center">✓</span><span class="text-sm">16–20px UI icons</span></div>
+<div class="flex items-center gap-3 text-neutral-600 dark:text-neutral-300"><span class="inline-flex h-6 w-6 items-center justify-center">↗</span><span class="text-sm">24px feature icons</span></div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="heading text-3xl">Tabs &amp; pagination</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="flex gap-6 border-b border-neutral-200 text-sm font-medium dark:border-neutral-700">
+<button class="border-b-2 border-orange-500 pb-3 text-orange-500">Overview</button>
+<button class="pb-3 text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50">Activity</button>
+<button class="pb-3 text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50">Settings</button>
+</div>
+<div class="mt-6 flex items-center gap-2 text-sm">
+<button class="rounded-full border border-neutral-300 px-3 py-0.5 dark:border-neutral-600">Previous</button>
+<button class="rounded-full bg-orange-500 px-3 py-0.5 font-semibold text-white">1</button>
+<button class="rounded-full px-3 py-0.5 hover:bg-neutral-100 dark:hover:bg-neutral-700">2</button>
+<button class="rounded-full px-3 py-0.5 hover:bg-neutral-100 dark:hover:bg-neutral-700">3</button>
+<button class="rounded-full border border-neutral-300 px-3 py-0.5 dark:border-neutral-600">Next</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 grid gap-12 lg:grid-cols-2">
+<div>
+<h3 class="heading text-3xl">Dropdown</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<label class="text-sm font-medium" for="standard-select">Connection</label>
+<select class="mt-2 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2 text-base focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-700 dark:bg-neutral-800" id="standard-select">
+<option>Shopify</option><option>Sage 50</option><option>HubSpot</option>
+</select>
+</div>
+</div>
+<div>
+<h3 class="heading text-3xl">Loading &amp; empty states</h3>
+<div class="mt-6 grid gap-4 sm:grid-cols-2">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="h-3 w-2/3 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700"></div><div class="mt-3 h-3 w-full animate-pulse rounded bg-neutral-200 dark:bg-neutral-700"></div><div class="mt-3 h-3 w-4/5 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700"></div>
+<div class="mt-5 text-xs text-neutral-500 dark:text-neutral-400">Skeleton for content loading</div>
+</div>
+<div class="rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 p-6 text-center dark:border-neutral-600 dark:bg-neutral-800">
+<div class="font-semibold">No workflows yet</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Create your first workflow to get started.</p><button class="mt-4 rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">Create workflow</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="heading text-3xl">Notifications</h3>
+<div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-500/20 dark:bg-emerald-500/10"><div class="font-semibold text-emerald-700 dark:text-emerald-400">Success</div><p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Workflow saved successfully.</p></div>
+<div class="rounded-2xl border border-blue-200 bg-blue-50 p-5 dark:border-blue-500/20 dark:bg-blue-500/10"><div class="font-semibold text-blue-700 dark:text-blue-400">Information</div><p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">A new version is available.</p></div>
+<div class="rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-500/20 dark:bg-amber-500/10"><div class="font-semibold text-amber-700 dark:text-amber-400">Warning</div><p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Connection requires attention.</p></div>
+<div class="rounded-2xl border border-red-200 bg-red-50 p-5 dark:border-red-500/20 dark:bg-red-500/10"><div class="font-semibold text-red-700 dark:text-red-400">Error</div><p class="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Import failed. Review the log.</p></div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="heading text-3xl">Interaction states</h3>
+<p class="mt-3 max-w-3xl text-base text-neutral-500 dark:text-neutral-400">Every interactive component should account for default, hover, focus, active, disabled and loading states. These examples show the minimum set developers should consider.</p>
+<div class="mt-6 flex flex-wrap items-center gap-3">
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white">Default</button>
+<button class="rounded-full bg-orange-600 px-4 py-1 text-sm font-semibold text-white">Hover</button>
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white ring-2 ring-orange-500 ring-offset-2 dark:ring-offset-neutral-900">Focus</button>
+<button class="rounded-full bg-orange-700 px-4 py-1 text-sm font-semibold text-white">Active</button>
+<button class="cursor-not-allowed rounded-full bg-neutral-200 px-4 py-1 text-sm font-semibold text-neutral-400 dark:bg-neutral-700 dark:text-neutral-500" disabled="">Disabled</button>
+<button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white"><span class="mr-2 inline-block h-3 w-3 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-1px]"></span>Loading</button>
+</div>
+</div>
+<div class="mt-16">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Zynk product patterns</div>
+<h3 class="heading mt-3 text-3xl">Data &amp; integration states</h3>
+<p class="mt-3 max-w-3xl text-base text-neutral-500 dark:text-neutral-400">Use consistent language and status treatments across connections, workflows, agents and records.</p>
+<div class="mt-6 grid gap-6 lg:grid-cols-2">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="text-sm font-semibold">Status language</div>
+<div class="mt-5 flex flex-wrap gap-2">
+<span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400">Connected</span>
+<span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-400">Running</span>
+<span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400">Completed</span>
+<span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300">Waiting</span>
+<span class="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-500/10 dark:text-amber-400">Warning</span>
+<span class="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-700 dark:bg-red-500/10 dark:text-red-400">Failed</span>
+<span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400">Disabled</span>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="text-sm text-neutral-500 dark:text-neutral-400">Workflow</div>
+<div class="mt-4 flex flex-wrap items-center gap-3 font-semibold"><span>Shopify</span><span class="text-orange-500">→</span><span>Transform</span><span class="text-orange-500">→</span><span>Sage 200</span></div>
+<div class="mt-5 flex items-center justify-between border-t border-neutral-200 pt-4 text-sm dark:border-neutral-700"><span class="text-neutral-500 dark:text-neutral-400">Last run 2 mins ago</span><span class="font-semibold text-emerald-700 dark:text-emerald-400">Completed</span></div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="heading text-3xl">Responsive rules</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="grid gap-6 md:grid-cols-3">
+<div><div class="font-semibold">Mobile</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Stack columns, keep actions obvious and reduce section spacing. Avoid hiding essential information.</p></div>
+<div><div class="font-semibold">Tablet</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use two-column layouts where content remains comfortable. Let tables scroll rather than crush columns.</p></div>
+<div><div class="font-semibold">Desktop</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use the full grid and max-w-7xl container, while keeping long-form reading content around max-w-3xl.</p></div>
+</div>
+</div>
+</div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800" id="colours">
+<h2 class="text-2xl">Colour reference</h2>
+<div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+<div><div class="h-14 rounded-lg bg-neutral-50 ring-1 ring-neutral-200"></div><div class="mt-2 text-xs">neutral-50</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-100"></div><div class="mt-2 text-xs">neutral-100</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-200"></div><div class="mt-2 text-xs">neutral-200</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-400"></div><div class="mt-2 text-xs">neutral-400</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-700"></div><div class="mt-2 text-xs">neutral-700</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-800"></div><div class="mt-2 text-xs">neutral-800</div></div>
+<div><div class="h-14 rounded-lg bg-neutral-900"></div><div class="mt-2 text-xs">neutral-900</div></div>
+<div><div class="h-14 rounded-lg bg-orange-500"></div><div class="mt-2 text-xs">orange-500</div></div>
+</div>
+</section>
+</main>
+</div>
+<script>
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    function applyTheme(theme) {
+      root.classList.toggle('dark', theme === 'dark');
+      localStorage.setItem('zynk-theme', theme);
+      toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+
+    const saved = localStorage.getItem('zynk-theme');
+    const initialTheme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(initialTheme);
+
+    toggle.addEventListener('click', () => {
+      applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
+    });
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) lucide.createIcons();
+  });
+</script></body>
+</html>

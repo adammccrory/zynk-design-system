@@ -1,1 +1,0 @@
-# zynk-design-systen
