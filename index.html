@@ -56,31 +56,45 @@
     @media (prefers-reduced-motion: reduce) {
       .glow-hero { animation: none; }
     }
+
+
+    /* Printed design-system guide: one major section per page. */
+    @media print {
+      header { display: none !important; }
+      [data-back-to-top="true"] { display: none !important; }
+      [data-section-divider="true"] { break-after: page; page-break-after: always; }
+      main > section { break-inside: avoid-page; }
+      main > section:last-of-type { break-after: auto; page-break-after: auto; }
+    }
 </style>
-<script defer="" src="https://unpkg.com/lucide@latest"></script></head>
-<body class="min-h-full bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 transition-colors">
+<script defer="" src="https://unpkg.com/lucide@latest"></script><meta content="1.11.2" name="zynk-design-system-version"/><meta content="2026-10-04T19:49:00+01:00" name="zynk-design-system-updated"/></head>
+<body class="min-h-full bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 transition-colors" id="top">
 <div class="min-h-screen">
 <header class="sticky top-0 z-40 border-b border-neutral-200 bg-neutral-50/90 backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/90">
 <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 <div class="flex items-center gap-3">
 <div>
-<div class="heading text-lg">Zynk Design System</div>
-<div class="text-sm text-neutral-500 dark:text-neutral-400">Kitchen sink · Neutral + Orange</div>
+<div class="heading text-lg">Zynk Design System</div><div class="mt-0.5 text-sm text-neutral-500 dark:text-neutral-400">Kitchen sink · Neutral + Orange</div><div class="mt-0.5 font-mono text-xs text-neutral-400 dark:text-neutral-500">Version 1.13.0 · Updated 4 October 2026, 20:09 BST</div>
 </div>
 </div>
 <div class="flex items-center gap-3">
-<span class="hidden text-sm text-neutral-500 dark:text-neutral-400 sm:inline">Inter Tight 700 headings</span>
-<button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700" id="themeToggle">
+<span class="hidden text-sm text-neutral-500 dark:text-neutral-400 xl:inline">Inter Tight 700 headings</span>
+<div class="relative" data-section-jump="true"><label class="sr-only" for="sectionJump">Jump to section</label><select class="h-9 w-48 appearance-none rounded-full border border-neutral-300 bg-white pl-4 text-sm font-medium text-neutral-700 outline-none transition hover:border-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 pr-10" id="sectionJump"><option value="">Jump to section…</option><option value="integrate-automate-grow">01. Hero section</option><option value="tokens">02. Core tokens</option><option value="buttons">03. Buttons &amp; badges</option><option value="forms">04. Form controls</option><option value="callout">05. Website Callout</option><option value="content-pattern">06. Content pattern</option><option value="content-pattern-image">07. Content with image</option><option value="steps">08. Steps</option><option value="alerts">09. Status alerts and toast</option><option value="workflows">10. App UI elements</option><option value="typography">11. Typography</option><option value="icons">12. Lucide icons</option><option value="product-icons">13. Product icons</option><option value="lists">14. Lists</option><option value="quotes">15. Quotes</option><option value="faqs">16. Frequently asked questions</option><option value="aurora">17. Zynk Aurora</option><option value="code-blocks">18. Code blocks</option><option value="navbar">19. Navigation bar</option><option value="mega-menu">20. Mega menu</option><option value="footer-example">21. Footer</option><option value="social-media">22. Social media graphics</option><option value="slide-presentations">23. Slide presentations</option><option value="practical-guidelines">24. Practical standards</option><option value="colours">25. Colour reference</option></select><i class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="chevron-down"></i></div><button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700" id="themeToggle">
             Toggle theme
           </button>
 </div>
 </div>
 </header>
 <main class="mx-auto max-w-7xl space-y-10 px-6 py-10">
-<section class="mx-auto max-w-7xl py-10" id="table-of-contents"><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="max-w-3xl"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Quick reference</div><h2 class="heading mt-2 text-2xl">Table of contents</h2><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">A compact index of the design system for people, developers and AI tools.</p></div><nav aria-label="Design system table of contents" class="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3"><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#integrate-automate-grow"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">01</span><span>Integrate. Automate. Grow.</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#tokens"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">02</span><span>Core tokens</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#buttons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">03</span><span>Buttons &amp; badges</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#callout"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">04</span><span>Website Callout</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">05</span><span>Clear content hierarchy for every section</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern-image"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">06</span><span>Pair strong content with supporting imagery</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#steps"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">07</span><span>Steps</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#alerts"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">08</span><span>Status alerts</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#workflows"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">09</span><span>Recent workflows</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#typography"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">10</span><span>Typography</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#icons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">11</span><span>Lucide icons</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#lists"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">12</span><span>Lists</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#quotes"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">13</span><span>Quotes</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#faqs"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">14</span><span>Frequently asked questions</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#aurora"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">15</span><span>Zynk Aurora</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#code-blocks"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">16</span><span>Code blocks</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#navbar"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">17</span><span>Navigation bar</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#mega-menu"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">18</span><span>Mega menu</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#footer-example"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">19</span><span>Footer</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#practical-guidelines"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">20</span><span>Patterns for consistent Zynk experiences</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#colours"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">21</span><span>Colour reference</span></a></nav></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="grid gap-6 lg:grid-cols-[1.4fr_.6fr]" id="integrate-automate-grow">
-<div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+<section class="mx-auto max-w-7xl py-10 scroll-mt-24" id="table-of-contents"><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="max-w-3xl"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Quick reference</div><h2 class="heading mt-2 text-2xl">Table of contents</h2><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">A compact index of the design system for people, developers and AI tools.</p></div><nav aria-label="Design system table of contents" class="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3"><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#integrate-automate-grow"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">01</span><span>Hero section</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#tokens"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">02</span><span>Core tokens</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#buttons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">03</span><span>Buttons &amp; badges</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#forms"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">04</span><span>Form controls</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#callout"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">05</span><span>Website Callout</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">06</span><span>Content pattern</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#content-pattern-image"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">07</span><span>Content with image</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#steps"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">08</span><span>Steps</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#alerts"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">09</span><span>Status alerts and toast</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#workflows"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">10</span><span>App UI elements</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#typography"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">11</span><span>Typography</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#icons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">12</span><span>Lucide icons</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#product-icons"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">13</span><span>Product icons</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#lists"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">14</span><span>Lists</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#quotes"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">15</span><span>Quotes</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#faqs"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">16</span><span>Frequently asked questions</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#aurora"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">17</span><span>Zynk Aurora</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#code-blocks"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">18</span><span>Code blocks</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#navbar"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">19</span><span>Navigation bar</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#mega-menu"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">20</span><span>Mega menu</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#footer-example"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">21</span><span>Footer</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#social-media"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">22</span><span>Social media graphics</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#slide-presentations"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">23</span><span>Slide presentations</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#practical-guidelines"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">24</span><span>Practical standards</span></a><a class="group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-orange-600 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-orange-400" href="#colours"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-xs font-semibold text-orange-600 dark:text-orange-400">25</span><span>Colour reference</span></a></nav></div><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="integrate-automate-grow">
+<div class="max-w-3xl">
+<h2 class="heading text-4xl leading-[115%]">01. Hero section</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a spacious, open hero rather than placing the main message inside a card. Reserve contained surfaces for supporting information such as the featured callout.</p>
+</div>
+<div class="mt-10 grid gap-10 lg:grid-cols-[1.4fr_.6fr] lg:items-center">
+<div class="py-4">
 <span class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-sm font-semibold text-orange-600 dark:text-orange-400">Zynk UI</span>
-<h1 class="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Integrate. Automate. <span class="text-orange-500">Grow.</span></h1>
+<h1 class="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Integrate. Automate. Grow.</h1>
 <p class="mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">A reference page showing the full Neutral + Orange visual language across light and dark themes.</p>
 <div class="mt-6 flex flex-wrap gap-3">
 <button class="rounded-full bg-orange-500 px-5 py-1.5 text-base font-semibold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900">Primary action</button>
@@ -89,15 +103,17 @@
 </div>
 </div>
 <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10">
-<h2 class="text-xl">Featured callout</h2>
+<h3 class="heading text-xl">Featured callout</h3>
 <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">Orange-tinted cards are reserved for important callouts, upgrades, announcements and premium features.</p>
 <div class="mt-5 rounded-xl bg-white/80 p-4 text-sm dark:bg-neutral-900/40">Keep normal cards neutral so orange remains meaningful.</div>
 </div>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div>
 </section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section id="tokens">
+<section class="scroll-mt-24" id="tokens">
 <div class="mb-4 flex items-end justify-between gap-4">
 <div>
-<h2 class="text-2xl">Core tokens</h2>
+<h2 class="heading text-4xl leading-[115%]">02. Core tokens</h2>
 <p class="mt-1 text-neutral-500 dark:text-neutral-400">Primary surfaces, text and brand colours.</p>
 </div>
 </div>
@@ -106,14 +122,22 @@
 <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm text-neutral-500 dark:text-neutral-400">Card</div><div class="mt-2 font-semibold">white / neutral-800</div></div>
 <div class="rounded-xl border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-600 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-300">Elevated surface</div><div class="mt-2 font-semibold">neutral-100 / neutral-700</div></div>
 <div class="rounded-xl border border-orange-600 bg-orange-500 p-5 text-white"><div class="text-sm text-white/80">Brand / Orange</div><div class="mt-2 font-semibold">orange-500</div><div class="mt-1 text-xs text-white/80">#f97316</div></div>
-<div class="rounded-xl border border-emerald-600 bg-emerald-500 p-5 text-white"><div class="text-sm text-white/80">Success / Green</div><div class="mt-2 font-semibold">emerald-500</div><div class="mt-1 text-xs text-white/80">#10b981</div></div>
-<div class="rounded-xl border border-red-600 bg-red-500 p-5 text-white"><div class="text-sm text-white/80">Error / Red</div><div class="mt-2 font-semibold">red-500</div><div class="mt-1 text-xs text-white/80">#ef4444</div></div>
-<div class="rounded-xl border border-blue-600 bg-blue-500 p-5 text-white"><div class="text-sm text-white/80">Information / Blue</div><div class="mt-2 font-semibold">blue-500</div><div class="mt-1 text-xs text-white/80">#3b82f6</div></div>
-</div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section class="grid gap-6 lg:grid-cols-2" id="buttons">
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
-<h2 class="text-2xl">Buttons &amp; badges</h2>
+<div class="rounded-xl border border-orange-200 bg-orange-50 p-5" data-token="featured-callout-light">
+<div class="text-sm text-neutral-700">Featured callout · Light</div>
+<div class="mt-2 font-semibold">bg orange-50 / border orange-200</div>
+<div class="mt-1 text-xs text-neutral-600">#fff7ed / #fed7aa</div>
+</div><div class="rounded-xl border border-orange-500/20 bg-orange-500/10 p-5 dark:border-orange-500/20 dark:bg-orange-500/10" data-token="featured-callout-dark">
+<div class="text-sm text-neutral-700 dark:text-neutral-300">Featured callout · Dark</div>
+<div class="mt-2 font-semibold text-neutral-900 dark:text-neutral-50">bg orange-500/10 / border orange-500/20</div>
+<div class="mt-1 text-xs text-neutral-600 dark:text-neutral-400">rgba(249,115,22,.10) / rgba(249,115,22,.20)</div>
+</div><div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800" data-token="featured-callout-text">
+<div class="text-sm text-neutral-500 dark:text-neutral-400">Featured callout text</div>
+<div class="mt-2 font-semibold">neutral-900 / neutral-50</div>
+<div class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">Body: neutral-700 / neutral-300</div>
+</div></div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="buttons"><div class="max-w-3xl"><h2 class="heading text-4xl leading-[115%]">03. Buttons &amp; badges</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use pill-shaped buttons, restrained badge treatments and clear action hierarchy.</p></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800 mt-10">
 <div class="mt-5 flex flex-wrap gap-3">
 <button class="rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">Primary</button>
 <button class="rounded-full border border-neutral-300 bg-white px-4 py-1 text-sm font-semibold hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:hover:bg-neutral-700">Secondary</button>
@@ -137,33 +161,129 @@
 <span class="rounded-full bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-500">Info</span>
 </div>
 </div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="forms">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Interface controls</div>
+<h2 class="heading mt-3 text-4xl leading-[115%]">04. Form controls</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Keep forms compact, calm and consistent. Standard single-line controls are 36px high, use orange focus states and avoid excessive vertical padding.</p>
+</div>
+<div class="mt-10 grid gap-6 lg:grid-cols-2">
 <div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
-<h2 class="text-2xl">Form controls</h2>
-<div class="mt-5 space-y-4">
+<h3 class="heading text-xl">Text inputs</h3>
+<div class="mt-5 space-y-5">
 <div>
-<label class="mb-2 block text-sm font-medium">Connection name</label>
-<input class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-500" value="Sage 200 Production"/>
+<label class="mb-1.5 block text-sm font-medium" for="formText">Connection name</label>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500" id="formText" type="text" value="Sage 200 Production"/>
+</div>
+<div class="grid gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formEmail">Email</label>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500" id="formEmail" placeholder="name@zynk.com" type="email"/>
 </div>
 <div>
-<label class="mb-2 block text-sm font-medium">Environment</label>
-<select class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50">
-<option>Production</option><option>Test</option>
+<label class="mb-1.5 block text-sm font-medium" for="formPassword">Password</label>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50" id="formPassword" type="password" value="password123"/>
+</div>
+</div>
+<div class="grid gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formSearch">Search</label>
+<div class="relative">
+<i class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="search"></i>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white pl-9 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500" id="formSearch" placeholder="Search records..." type="search"/>
+</div>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formNumber">Number</label>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50" id="formNumber" type="number" value="100"/>
+</div>
+</div>
+<div class="grid gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formDate">Date</label>
+<input class="h-9 w-full rounded-lg border border-neutral-300 bg-white px-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50" id="formDate" type="date" value="2026-10-04"/>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formFile">File</label>
+<input class="block h-9 w-full rounded-lg border border-neutral-300 bg-white text-sm text-neutral-600 file:mr-3 file:h-full file:border-0 file:border-r file:border-neutral-300 file:bg-neutral-100 file:px-3 file:text-sm file:font-medium file:text-neutral-700 hover:file:bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-300 dark:file:border-neutral-600 dark:file:bg-neutral-800 dark:file:text-neutral-200" id="formFile" type="file"/>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Selection &amp; choice</h3>
+<div class="mt-5 space-y-5">
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formSelect">Environment</label>
+<div class="relative">
+<select class="h-9 w-full appearance-none rounded-lg border border-neutral-300 bg-white pl-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 pr-10" id="formSelect">
+<option>Production</option><option>Test</option><option>Development</option>
 </select>
+<i class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="chevron-down"></i>
 </div>
-<label class="flex items-center gap-3 text-sm"><input checked="" class="h-4 w-4 rounded border-neutral-300 text-orange-500 focus:ring-orange-500 accent-orange-500" type="checkbox"/> Enable automatic sync</label>
+<p class="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">Use <code>appearance-none pr-10</code> and position the chevron at <code>right-4</code>.</p>
+</div>
+<div>
+<div class="mb-2 text-sm font-medium">Checkboxes</div>
+<div class="space-y-2">
+<label class="flex items-center gap-2.5 text-sm"><input checked="" class="h-4 w-4 rounded border-neutral-300 accent-orange-500 focus:ring-orange-500" type="checkbox"/> Enable automatic sync</label>
+<label class="flex items-center gap-2.5 text-sm"><input class="h-4 w-4 rounded border-neutral-300 accent-orange-500 focus:ring-orange-500" type="checkbox"/> Send completion email</label>
 </div>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="callout"><h2 class="font-display text-3xl font-bold leading-[115%]">Website Callout</h2><p class="mt-2 max-w-2xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Use a solid orange-500 callout for high-priority website messaging and conversion-focused sections.</p><div class="mt-8 w-full rounded-2xl bg-orange-500 p-8 text-white md:flex md:items-center md:justify-between md:gap-8"><div><h3 class="font-display text-2xl font-bold leading-[120%]">Ready to connect your systems?</h3><p class="mt-2 max-w-2xl text-base leading-[150%] text-orange-50">Automate the flow of data between ecommerce, accounting, CRM and operational systems with Zynk.</p></div><div class="mt-6 shrink-0 md:mt-0"><button class="rounded-full bg-white px-5 py-1.5 text-base font-semibold text-orange-600 hover:bg-orange-50 transition-colors">Talk to us</button></div></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="content-pattern"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content pattern</div><h2 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-[115%] text-neutral-900 dark:text-neutral-50">Clear content hierarchy for every section</h2><p class="mt-4 max-w-3xl text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a short orange eyebrow to introduce the topic, followed by an H2 and a stronger lead paragraph that communicates the main message quickly.</p><p class="mt-4 max-w-3xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Supporting body copy should provide the detail without competing with the headline. Keep paragraphs concise, use comfortable line lengths, and maintain consistent vertical spacing so content remains easy to scan across both marketing pages and product interfaces.</p></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="content-pattern-image"><div class="grid gap-8 lg:grid-cols-2 lg:items-center"><div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800"><img alt="Example content image" class="h-[420px] w-full object-cover" src="https://picsum.photos/200/300"/></div><div class="lg:pl-4"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content with image</div><h2 class="mt-3 font-display text-3xl font-bold leading-[115%] text-neutral-900 dark:text-neutral-50">Pair strong content with supporting imagery</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a balanced two-column layout when an image helps explain the story, product or outcome without overwhelming the written content.</p><p class="mt-4 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">The image should use the same rounded corners, border treatment and visual language as other cards. Keep the eyebrow, heading and paragraph hierarchy consistent with standard content sections so pages feel cohesive.</p></div></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="steps">
+<fieldset>
+<legend class="mb-2 text-sm font-medium">Radio group</legend>
+<div class="flex flex-wrap gap-5">
+<label class="flex items-center gap-2.5 text-sm"><input checked="" class="h-4 w-4 accent-orange-500" name="frequency" type="radio"/> Automatic</label>
+<label class="flex items-center gap-2.5 text-sm"><input class="h-4 w-4 accent-orange-500" name="frequency" type="radio"/> Manual</label>
+</div>
+</fieldset>
+<div>
+<label class="mb-2 block text-sm font-medium" for="formRange">Range</label>
+<input class="w-full accent-orange-500" id="formRange" max="100" min="0" type="range" value="65"/>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Long text &amp; states</h3>
+<div class="mt-5 space-y-5">
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formTextarea">Notes</label>
+<textarea class="w-full resize-y rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm leading-[150%] text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500" id="formTextarea" placeholder="Add implementation notes..." rows="4"></textarea>
+<p class="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">Helper text can clarify format, limits or expected content.</p>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium" for="formError">Validation error</label>
+<input aria-invalid="true" class="h-9 w-full rounded-lg border border-red-500 bg-white px-3 text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-red-500/20 dark:bg-neutral-900 dark:text-neutral-50" id="formError" type="text" value="Invalid account reference"/>
+<p class="mt-1.5 text-xs text-red-600 dark:text-red-400">Enter a valid account reference.</p>
+</div>
+<div>
+<label class="mb-1.5 block text-sm font-medium text-neutral-500" for="formDisabled">Disabled</label>
+<input class="h-9 w-full cursor-not-allowed rounded-lg border border-neutral-200 bg-neutral-100 px-3 text-sm text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-500" disabled="" id="formDisabled" type="text" value="Managed by administrator"/>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Native control guidance</h3>
+<div class="mt-5 space-y-4 text-sm text-neutral-600 dark:text-neutral-300">
+<div class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="ruler"></i><span><strong class="text-neutral-900 dark:text-neutral-50">Single-line height:</strong> use <code>h-9</code> (36px) for standard controls.</span></div>
+<div class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="move-horizontal"></i><span><strong class="text-neutral-900 dark:text-neutral-50">Horizontal padding:</strong> normally <code>px-3</code>.</span></div>
+<div class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="chevron-down"></i><span><strong class="text-neutral-900 dark:text-neutral-50">Select arrows:</strong> suppress the browser arrow with <code>appearance-none</code>; use a Lucide chevron at <code>right-4</code>.</span></div>
+<div class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="focus"></i><span><strong class="text-neutral-900 dark:text-neutral-50">Focus:</strong> orange-500 border with a subtle orange ring.</span></div>
+<div class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="accessibility"></i><span><strong class="text-neutral-900 dark:text-neutral-50">Accessibility:</strong> always use visible labels, fieldsets/legends for grouped choices, and meaningful error text.</span></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="callout"><h2 class="heading text-4xl leading-[115%]">05. Website Callout</h2><p class="mt-2 max-w-2xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Use a solid orange-500 callout for high-priority website messaging and conversion-focused sections.</p><div class="mt-8 w-full rounded-2xl bg-orange-500 p-8 text-white md:flex md:items-center md:justify-between md:gap-8"><div><h3 class="font-display text-2xl font-bold leading-[120%]">Ready to connect your systems?</h3><p class="mt-2 max-w-2xl text-base leading-[150%] text-orange-50">Automate the flow of data between ecommerce, accounting, CRM and operational systems with Zynk.</p></div><div class="mt-6 shrink-0 md:mt-0"><button class="rounded-full bg-white px-5 py-1.5 text-base font-semibold text-orange-600 hover:bg-orange-50 transition-colors">Talk to us</button></div></div><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="content-pattern"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content pattern</div><h2 class="heading mt-3 max-w-3xl text-4xl leading-[115%]">06. Content pattern</h2><p class="mt-4 max-w-3xl text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a short orange eyebrow to introduce the topic, followed by an H2 and a stronger lead paragraph that communicates the main message quickly.</p><p class="mt-4 max-w-3xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Supporting body copy should provide the detail without competing with the headline. Keep paragraphs concise, use comfortable line lengths, and maintain consistent vertical spacing so content remains easy to scan across both marketing pages and product interfaces.</p><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="content-pattern-image"><div class="grid gap-8 lg:grid-cols-2 lg:items-center"><div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800"><img alt="Example content image" class="h-[420px] w-full object-cover" src="https://picsum.photos/200/300"/></div><div class="lg:pl-4"><div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content with image</div><h2 class="heading mt-3 text-4xl leading-[115%]">07. Content with image</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a balanced two-column layout when an image helps explain the story, product or outcome without overwhelming the written content.</p><p class="mt-4 text-base leading-[150%] text-neutral-500 dark:text-neutral-400">The image should use the same rounded corners, border treatment and visual language as other cards. Keep the eyebrow, heading and paragraph hierarchy consistent with standard content sections so pages feel cohesive.</p></div></div><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="steps">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Process</div>
-<h2 class="heading mt-3 text-4xl">Steps</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">08. Steps</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use step cards to explain a short, linear process. Keep each step concise, use a relevant Lucide icon and place the step number subtly in the background.
     </p>
 </div>
 <div class="mt-10 grid gap-6 lg:grid-cols-3">
 <div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
-<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">01</div>
+<div class="pointer-events-none absolute right-5 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">01</div>
 <div class="relative z-10">
 <i class="h-7 w-7 text-orange-500" data-lucide="message-square"></i>
 <h3 class="heading mt-6 text-xl">Tell us your systems</h3>
@@ -173,7 +293,7 @@
 </div>
 </div>
 <div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
-<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">02</div>
+<div class="pointer-events-none absolute right-5 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">02</div>
 <div class="relative z-10">
 <i class="h-7 w-7 text-orange-500" data-lucide="map"></i>
 <h3 class="heading mt-6 text-xl">We map your data</h3>
@@ -183,7 +303,7 @@
 </div>
 </div>
 <div class="relative min-h-[220px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-7 dark:border-neutral-700 dark:bg-neutral-800">
-<div class="pointer-events-none absolute -right-1 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">03</div>
+<div class="pointer-events-none absolute right-5 top-1 text-[9rem] font-bold leading-none text-orange-500/[0.07] dark:text-orange-500/[0.10]">03</div>
 <div class="relative z-10">
 <i class="h-7 w-7 text-orange-500" data-lucide="rocket"></i>
 <h3 class="heading mt-6 text-xl">Go live in days</h3>
@@ -197,47 +317,139 @@
 <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
     Use three to five steps. Keep the large number decorative and low contrast, use one orange Lucide icon per step, and avoid putting buttons inside individual step cards unless an action is essential.
   </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section id="alerts">
-<h2 class="text-2xl">Status alerts</h2>
-<div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-<div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10"><div class="font-semibold text-emerald-700 dark:text-emerald-400">Success</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Workflow completed successfully.</p></div>
-<div class="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-500/20 dark:bg-amber-500/10"><div class="font-semibold text-amber-700 dark:text-amber-400">Warning</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Three records require attention.</p></div>
-<div class="rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-500/20 dark:bg-red-500/10"><div class="font-semibold text-red-700 dark:text-red-400">Error</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Connection authentication failed.</p></div>
-<div class="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/20 dark:bg-blue-500/10"><div class="font-semibold text-blue-700 dark:text-blue-400">Information</div><p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">A new connector version is available.</p></div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="scroll-mt-24" id="alerts">
+<div class="max-w-3xl">
+<h2 class="heading text-4xl leading-[115%]">09. Status alerts and toast</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use semantic colour only when communicating status or feedback. Keep the technical colour reference outside the visible alert itself.</p>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section class="grid gap-6 xl:grid-cols-[1.15fr_.85fr]" id="workflows">
-<div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800">
-<div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4 dark:border-neutral-700"><div><h2 class="text-xl">Recent workflows</h2><p class="text-sm text-neutral-500 dark:text-neutral-400">Example table treatment</p></div><button class="rounded-full px-4 py-1 text-sm font-semibold text-orange-500 hover:bg-orange-50 hover:text-orange-600 dark:hover:bg-orange-500/10">View all</button></div>
+<div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div>
+<div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10">
+<div class="font-semibold text-emerald-700 dark:text-emerald-400">Success</div>
+<p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Workflow completed successfully.</p>
+</div>
+<p class="mt-2 text-xs leading-[155%] text-neutral-500 dark:text-neutral-400"><strong>Light:</strong> <code>emerald-50</code> rgb(236,253,245), border <code>emerald-200</code> rgb(167,243,208), title <code>emerald-700</code> rgb(4,120,87). <strong>Dark:</strong> <code>emerald-500/10</code> rgba(16,185,129,.10), border <code>emerald-500/20</code> rgba(16,185,129,.20), title <code>emerald-400</code> rgb(52,211,153).</p>
+</div>
+<div>
+<div class="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-500/20 dark:bg-amber-500/10">
+<div class="font-semibold text-amber-700 dark:text-amber-400">Warning</div>
+<p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Connection requires attention.</p>
+</div>
+<p class="mt-2 text-xs leading-[155%] text-neutral-500 dark:text-neutral-400"><strong>Light:</strong> <code>amber-50</code> rgb(255,251,235), border <code>amber-200</code> rgb(253,230,138), title <code>amber-700</code> rgb(180,83,9). <strong>Dark:</strong> <code>amber-500/10</code> rgba(245,158,11,.10), border <code>amber-500/20</code> rgba(245,158,11,.20), title <code>amber-400</code> rgb(251,191,36).</p>
+</div>
+<div>
+<div class="rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-500/20 dark:bg-red-500/10">
+<div class="font-semibold text-red-700 dark:text-red-400">Error</div>
+<p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">Import failed. Review the log.</p>
+</div>
+<p class="mt-2 text-xs leading-[155%] text-neutral-500 dark:text-neutral-400"><strong>Light:</strong> <code>red-50</code> rgb(254,242,242), border <code>red-200</code> rgb(254,202,202), title <code>red-700</code> rgb(185,28,28). <strong>Dark:</strong> <code>red-500/10</code> rgba(239,68,68,.10), border <code>red-500/20</code> rgba(239,68,68,.20), title <code>red-400</code> rgb(248,113,113).</p>
+</div>
+<div>
+<div class="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/20 dark:bg-blue-500/10">
+<div class="font-semibold text-blue-700 dark:text-blue-400">Information</div>
+<p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">A new version is available.</p>
+</div>
+<p class="mt-2 text-xs leading-[155%] text-neutral-500 dark:text-neutral-400"><strong>Light:</strong> <code>blue-50</code> rgb(239,246,255), border <code>blue-200</code> rgb(191,219,254), title <code>blue-700</code> rgb(29,78,216). <strong>Dark:</strong> <code>blue-500/10</code> rgba(59,130,246,.10), border <code>blue-500/20</code> rgba(59,130,246,.20), title <code>blue-400</code> rgb(96,165,250).</p>
+</div>
+</div>
+<div class="mt-12 max-w-xl">
+<h3 class="heading text-2xl">Toast</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use toast feedback for short-lived confirmation or status messages. Keep it compact and use the same semantic colour rules as alerts.</p>
+<div class="mt-5 flex items-start gap-3 rounded-xl border border-emerald-200 bg-white p-4 shadow-sm dark:border-emerald-500/20 dark:bg-neutral-800">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" data-lucide="circle-check"></i>
+<div class="min-w-0"><div class="text-sm font-semibold">Workflow saved</div><div class="mt-0.5 text-sm text-neutral-500 dark:text-neutral-400">Your changes have been applied.</div></div>
+<button aria-label="Dismiss" class="ml-auto text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200"><i class="h-4 w-4" data-lucide="x"></i></button>
+</div>
+<p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">Toast surface remains neutral; semantic colour is carried by the icon/border. Keep toast copy to one short title and one optional supporting line.</p>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="workflows">
+<div class="max-w-3xl"><h2 class="heading text-4xl leading-[115%]">10. App UI elements</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Application patterns for searchable data grids, operational metrics and common workflow UI.</p></div><div class="mt-10 grid gap-6 xl:grid-cols-[1.15fr_.85fr]"><div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800">
+<div class="border-b border-neutral-200 px-6 py-4 dark:border-neutral-700">
+<div class="flex flex-wrap items-start justify-between gap-4">
+<div>
+<h2 class="heading text-xl">Recent workflows</h2>
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Searchable, filterable and sortable data-grid treatment</p>
+</div>
+<button class="rounded-full px-4 py-1 text-sm font-semibold text-orange-500 hover:bg-orange-50 hover:text-orange-600 dark:hover:bg-orange-500/10">View all</button>
+</div>
+<div class="mt-4 grid gap-2 sm:grid-cols-[minmax(0,1fr)_10rem_auto] sm:items-center">
+<label class="relative min-w-0">
+<span class="sr-only">Search workflows</span>
+<i class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="search"></i>
+<input class="h-9 w-full rounded-xl border border-neutral-300 bg-white pl-9 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500" id="workflowSearch" placeholder="Search workflows..." type="search"/>
+</label>
+<label>
+<span class="sr-only">Filter by status</span>
+<div class="relative"><select class="h-9 w-full rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 appearance-none pl-3 pr-10" id="workflowStatusFilter">
+<option value="all">All statuses</option>
+<option value="completed">Completed</option>
+<option value="warning">Warning</option>
+<option value="failed">Failed</option>
+</select><i class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="chevron-down"></i></div>
+</label>
+<button class="h-9 rounded-full px-3 text-sm font-semibold text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-50" id="workflowClearFilters">Clear</button>
+</div>
+<div class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+<span id="workflowResultCount">4 workflows</span>
+</div>
+</div>
 <div class="overflow-x-auto">
-<table class="w-full text-left text-sm">
-<thead class="bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300"><tr><th class="px-6 py-3 font-semibold">Workflow</th><th class="px-6 py-3 font-semibold">Status</th><th class="px-6 py-3 font-semibold">Records</th><th class="px-6 py-3 font-semibold">Updated</th></tr></thead>
-<tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
-<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">Shopify → Sage 200</td><td class="px-6 py-4"><span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-500">Completed</span></td><td class="px-6 py-4">1,284</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">2 min ago</td></tr>
-<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">HubSpot → Sage Intacct</td><td class="px-6 py-4"><span class="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-500">Warning</span></td><td class="px-6 py-4">342</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">18 min ago</td></tr>
-<tr class="hover:bg-neutral-50 dark:hover:bg-neutral-700"><td class="px-6 py-4 font-medium">Amazon → Sage 50</td><td class="px-6 py-4"><span class="rounded-full bg-red-500/10 px-3 py-1 text-sm font-medium text-red-500">Failed</span></td><td class="px-6 py-4">89</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">41 min ago</td></tr>
+<table class="w-full text-left text-sm" id="workflowTable">
+<thead class="bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300">
+<tr>
+<th aria-sort="none" class="px-6 py-3 font-semibold">
+<button class="workflow-sort inline-flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-orange-400" data-sort="workflow" type="button">Workflow <i class="h-3.5 w-3.5" data-lucide="arrow-up-down"></i></button>
+</th>
+<th aria-sort="none" class="px-6 py-3 font-semibold">
+<button class="workflow-sort inline-flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-orange-400" data-sort="status" type="button">Status <i class="h-3.5 w-3.5" data-lucide="arrow-up-down"></i></button>
+</th>
+<th aria-sort="none" class="px-6 py-3 font-semibold">
+<button class="workflow-sort inline-flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-orange-400" data-sort="records" type="button">Records <i class="h-3.5 w-3.5" data-lucide="arrow-up-down"></i></button>
+</th>
+<th aria-sort="descending" class="px-6 py-3 font-semibold">
+<button class="workflow-sort inline-flex items-center gap-1.5 text-orange-600 dark:text-orange-400" data-sort="updated" type="button">Updated <i class="h-3.5 w-3.5" data-lucide="arrow-down"></i></button>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-neutral-200 dark:divide-neutral-700" id="workflowRows">
+<tr class="workflow-row hover:bg-neutral-50 dark:hover:bg-neutral-700" data-records="1284" data-status="completed" data-updated="2" data-workflow="Shopify → Sage 200">
+<td class="px-6 py-4 font-medium">Shopify → Sage 200</td><td class="px-6 py-4"><span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-500">Completed</span></td><td class="px-6 py-4">1,284</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">2 min ago</td>
+</tr>
+<tr class="workflow-row hover:bg-neutral-50 dark:hover:bg-neutral-700" data-records="342" data-status="warning" data-updated="18" data-workflow="HubSpot → Sage Intacct">
+<td class="px-6 py-4 font-medium">HubSpot → Sage Intacct</td><td class="px-6 py-4"><span class="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-500">Warning</span></td><td class="px-6 py-4">342</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">18 min ago</td>
+</tr>
+<tr class="workflow-row hover:bg-neutral-50 dark:hover:bg-neutral-700" data-records="89" data-status="failed" data-updated="41" data-workflow="Amazon → Sage 50">
+<td class="px-6 py-4 font-medium">Amazon → Sage 50</td><td class="px-6 py-4"><span class="rounded-full bg-red-500/10 px-3 py-1 text-sm font-medium text-red-500">Failed</span></td><td class="px-6 py-4">89</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">41 min ago</td>
+</tr>
+<tr class="workflow-row hover:bg-neutral-50 dark:hover:bg-neutral-700" data-records="618" data-status="completed" data-updated="67" data-workflow="WooCommerce → Sage 50">
+<td class="px-6 py-4 font-medium">WooCommerce → Sage 50</td><td class="px-6 py-4"><span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-500">Completed</span></td><td class="px-6 py-4">618</td><td class="px-6 py-4 text-neutral-500 dark:text-neutral-400">1 hr ago</td>
+</tr>
 </tbody>
 </table>
+<div class="hidden px-6 py-10 text-center" id="workflowEmpty">
+<i class="mx-auto h-6 w-6 text-neutral-400" data-lucide="search-x"></i>
+<div class="mt-3 font-semibold">No workflows found</div>
+<p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Try changing your search or status filter.</p>
 </div>
 </div>
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+</div><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
 <h2 class="text-xl">Metrics</h2>
 <div class="mt-5 grid gap-4 sm:grid-cols-2">
 <div class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-400">Transactions</div><div class="mt-2 heading text-3xl">24.8k</div><div class="mt-2 text-sm text-emerald-500">+12.4%</div></div>
 <div class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"><div class="text-sm text-neutral-500 dark:text-neutral-400">Failures</div><div class="mt-2 heading text-3xl">0.7%</div><div class="mt-2 text-sm text-red-500">+0.1%</div></div>
 </div>
-<div class="mt-5 h-40 rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-900">
-<div class="flex h-full items-end gap-2">
-<div class="h-[35%] flex-1 rounded-t bg-orange-500"></div><div class="h-[55%] flex-1 rounded-t bg-blue-500"></div><div class="h-[75%] flex-1 rounded-t bg-emerald-500"></div><div class="h-[48%] flex-1 rounded-t bg-teal-500"></div><div class="h-[85%] flex-1 rounded-t bg-orange-500"></div><div class="h-[68%] flex-1 rounded-t bg-amber-500"></div><div class="h-[92%] flex-1 rounded-t bg-orange-500"></div>
+<div class="mt-6 rounded-xl border border-neutral-200 p-4 dark:border-neutral-700">
+<div class="flex items-center justify-between"><span class="text-sm font-medium">Daily usage</span><span class="text-xs text-neutral-500 dark:text-neutral-400">Last 7 days</span></div>
+<div aria-label="Illustrative usage bars" class="mt-4 flex h-24 items-end gap-2">
+<div class="h-[45%] flex-1 rounded-t bg-orange-500/35"></div><div class="h-[58%] flex-1 rounded-t bg-orange-500/45"></div><div class="h-[52%] flex-1 rounded-t bg-orange-500/45"></div><div class="h-[72%] flex-1 rounded-t bg-orange-500/60"></div><div class="h-[64%] flex-1 rounded-t bg-orange-500/55"></div><div class="h-[84%] flex-1 rounded-t bg-orange-500/75"></div><div class="h-full flex-1 rounded-t bg-orange-500"></div>
 </div>
 </div>
-</div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section class="grid gap-6 lg:grid-cols-3" id="typography">
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
-<h2 class="text-xl leading-[120%]">Typography</h2>
-<p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Headings use Inter Tight 700. Body and UI text use Inter. Line-height is shown explicitly for designer and developer handoff.</p>
+</div></div><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="typography">
+<div class="max-w-3xl"><h2 class="heading text-4xl leading-[115%]">11. Typography</h2><p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Typography rules, font sizing, progress treatments and common text-led UI patterns.</p></div><div class="mt-10 grid gap-6 lg:grid-cols-3"><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="heading text-xl">Fonts</h2>
 <div class="mt-6 space-y-6">
 <div><h1 class="text-5xl leading-[110%]">Heading 1</h1><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">48px · Inter Tight 700 · 110% line-height (52.8px)</p></div>
 <div><h2 class="text-4xl leading-[115%]">Heading 2</h2><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">36px · Inter Tight 700 · 115% line-height (41.4px)</p></div>
@@ -250,14 +462,19 @@
 <div><p class="text-sm leading-[150%]">Small UI, supporting and helper text</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">14px · Inter 400/500 · 150% line-height (21px)</p></div>
 <div><p class="text-xs leading-[150%]">Extra-small metadata where space is constrained</p><p class="mt-1 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">12px · Inter 400/500 · 150% line-height (18px)</p></div>
 </div>
+</div><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">Progress</h2><div class="mt-5 space-y-5"><div><div class="mb-2 flex justify-between text-sm"><span>Orders synced</span><span>82%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[82%] rounded-full bg-orange-500"></div></div></div><div><div class="mb-2 flex justify-between text-sm"><span>Connection health</span><span>96%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[96%] rounded-full bg-emerald-500"></div></div></div></div></div><div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">List group</h2><div class="mt-5 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 dark:divide-neutral-700 dark:border-neutral-700"><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Account settings</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Billing &amp; usage</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Team members</div></div></div><div class="mt-8 rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10" id="heading-colour-rule">
+<div class="flex items-start gap-3">
+<i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="type"></i>
+<div>
+<div class="font-semibold text-neutral-950 dark:text-neutral-50">Headings use one colour only</div>
+<p class="mt-2 text-sm leading-[150%] text-neutral-700 dark:text-neutral-300">On light backgrounds use <code>neutral-950</code> (black). On dark or image backgrounds use <code>neutral-50</code> (white). Never colour individual words in a heading orange. Use orange for eyebrows, icons, rules, links and CTAs instead.</p>
 </div>
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">Progress</h2><div class="mt-5 space-y-5"><div><div class="mb-2 flex justify-between text-sm"><span>Orders synced</span><span>82%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[82%] rounded-full bg-orange-500"></div></div></div><div><div class="mb-2 flex justify-between text-sm"><span>Connection health</span><span>96%</span></div><div class="h-2 rounded-full bg-neutral-200 dark:bg-neutral-700"><div class="h-2 w-[96%] rounded-full bg-emerald-500"></div></div></div></div></div>
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><h2 class="text-xl">List group</h2><div class="mt-5 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 dark:divide-neutral-700 dark:border-neutral-700"><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Account settings</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Billing &amp; usage</div><div class="p-4 hover:bg-neutral-50 dark:hover:bg-neutral-700">Team members</div></div></div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
-<section class="mx-auto max-w-7xl py-16" id="icons">
+</div>
+</div></div><div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div>
+<section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="icons">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Iconography</div>
-<h2 class="heading mt-3 text-4xl">Lucide icons</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">12. Lucide icons</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use Lucide as the standard icon library across Zynk products and marketing. Keep icons simple, consistent and supportive of the content rather than decorative for their own sake.
     </p>
@@ -352,10 +569,87 @@
       </p>
 </div>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="lists">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="product-icons">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Brand assets</div>
+<h2 class="heading mt-3 text-4xl leading-[115%]">13. Product icons</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Product and platform icons represent third-party brands such as Shopify, Sage, HubSpot and Xero. Treat them as brand assets, not UI icons. Use SVG wherever possible and source approved assets from Dashboard Icons before looking elsewhere.
+    </p>
+</div>
+<div class="mt-10 grid gap-6 lg:grid-cols-3">
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Preferred source</h3>
+<p class="mt-3 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">
+        Search <a class="font-semibold text-orange-500 hover:text-orange-600" href="https://dashboardicons.com/" rel="noreferrer" target="_blank">Dashboard Icons</a> first. It provides product/service logos in SVG, PNG and WEBP, with light/dark variants for many brands.
+      </p>
+<a class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600" href="https://dashboardicons.com/" rel="noreferrer" target="_blank">
+        Browse Dashboard Icons <i class="h-4 w-4" data-lucide="external-link"></i>
+</a>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Format priority</h3>
+<ol class="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+<li class="flex gap-3"><span class="font-mono text-orange-500">01</span><span><strong class="text-neutral-900 dark:text-neutral-50">SVG</strong> preferred for all scalable product icons.</span></li>
+<li class="flex gap-3"><span class="font-mono text-orange-500">02</span><span><strong class="text-neutral-900 dark:text-neutral-50">PNG / WEBP</strong> only when an SVG is unavailable.</span></li>
+<li class="flex gap-3"><span class="font-mono text-orange-500">03</span><span>Use the vendor's official asset if Dashboard Icons does not contain the product.</span></li>
+</ol>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Do not</h3>
+<ul class="mt-4 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-red-500" data-lucide="x"></i><span>Do not replace a product logo with a Lucide icon.</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-red-500" data-lucide="x"></i><span>Do not redraw, recolour or distort a third-party brand mark.</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-4 w-4 shrink-0 text-red-500" data-lucide="x"></i><span>Do not place raster icons at sizes that make them visibly soft.</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+<div>
+<h3 class="heading text-3xl">Sizing example</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="flex flex-wrap items-end gap-8">
+<div class="text-center">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 p-2 dark:bg-neutral-700"><img alt="Shopify product icon" class="h-6 w-6 object-contain" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/shopify.svg"/></div>
+<div class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">24px</div>
+</div>
+<div class="text-center">
+<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-100 p-2.5 dark:bg-neutral-700"><img alt="Shopify product icon" class="h-9 w-9 object-contain" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/shopify.svg"/></div>
+<div class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">36px</div>
+</div>
+<div class="text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-100 p-3 dark:bg-neutral-700"><img alt="Shopify product icon" class="h-10 w-10 object-contain" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/shopify.svg"/></div>
+<div class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">40px</div>
+</div>
+</div>
+<p class="mt-5 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Use the smallest size that remains recognisable. Typical product-card and connection-list usage is 32–40px; compact rows can use 24px.</p>
+</div>
+</div>
+<div>
+<h3 class="heading text-3xl">Product icon treatment</h3>
+<div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="grid gap-4 sm:grid-cols-2">
+<div class="flex items-center gap-4 rounded-xl border border-neutral-200 p-4 dark:border-neutral-700">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-neutral-100 p-2 dark:bg-neutral-700"><img alt="Shopify product icon" class="h-8 w-8 object-contain" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/shopify.svg"/></div>
+<div><div class="font-semibold">Shopify</div><div class="mt-0.5 text-sm text-neutral-500 dark:text-neutral-400">Product icon + text label</div></div>
+</div>
+<div class="flex items-center gap-4 rounded-xl border border-neutral-200 p-4 dark:border-neutral-700">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-neutral-50 text-xs font-semibold text-neutral-400 dark:border-neutral-600 dark:bg-neutral-900">SVG</div>
+<div><div class="font-semibold">Other products</div><div class="mt-0.5 text-sm text-neutral-500 dark:text-neutral-400">Use the approved vendor mark</div></div>
+</div>
+</div>
+<p class="mt-5 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Give icons a predictable neutral container only when the surrounding layout needs alignment. Preserve the icon's original aspect ratio with <code>object-contain</code>; never stretch to fill the container.</p>
+</div>
+</div>
+</div>
+<div class="mt-10 rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10">
+<div class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="badge-check"></i><div><div class="font-semibold text-neutral-950 dark:text-neutral-50">Source hierarchy</div><p class="mt-2 text-sm leading-[150%] text-neutral-700 dark:text-neutral-300">1. Dashboard Icons SVG where available. 2. Official vendor SVG. 3. Official vendor PNG/WEBP at sufficient resolution. Keep brand colours and proportions intact, and check the vendor's trademark/brand guidance when necessary.</p></div></div>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div>
+</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="lists">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Content styling</div>
-<h2 class="heading mt-3 text-4xl">Lists</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">14. Lists</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Use a small number of consistent list patterns across marketing content, documentation and product interfaces.</p>
 </div>
 <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -422,10 +716,10 @@
 <div><span class="font-semibold text-neutral-900 dark:text-neutral-50">Lucide icon</span><br/>Use when the icon communicates a specific concept or category.</div>
 </div>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="quotes">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="quotes">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Editorial content</div>
-<h2 class="heading mt-3 text-4xl">Quotes</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">15. Quotes</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use quotes to highlight customer feedback, expert commentary or an important statement. Keep the treatment simple and editorial rather than placing the quote inside another card.
     </p>
@@ -443,10 +737,10 @@
       “For shorter quotes within articles or supporting website content, use the same orange rule with standard body sizing.”
     </p>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="faqs">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="faqs">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Help &amp; guidance</div>
-<h2 class="heading mt-3 text-4xl">Frequently asked questions</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">16. Frequently asked questions</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use a simple accordion for FAQs. Keep questions concise, answers easy to scan and use the orange accent only for the active state.
     </p>
@@ -493,25 +787,39 @@
 <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
     Prefer one open item at a time on marketing pages, keep answers to a few short paragraphs, and avoid placing every FAQ inside an individual card.
   </p>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="aurora">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="aurora">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Brand effect</div>
-<h2 class="heading mt-3 text-4xl">Zynk Aurora</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">17. Zynk Aurora</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
-      This is the exact <code>.glow-hero</code> effect used by the Zynk website. It combines four blurred radial gradients and slowly drifts and scales them using transform-only animation.
+      This is the exact <code>.glow-hero</code> effect used by the Zynk website. The glow itself is identical in both themes; the page background changes beneath it, producing distinct light and dark treatments.
     </p>
 </div>
-<div class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 dark:border-neutral-700">
-<div class="relative min-h-[420px] overflow-hidden text-white">
+<div class="mt-10 grid gap-6 lg:grid-cols-2">
+<div>
+<div class="mb-3 text-sm font-semibold text-neutral-700 dark:text-neutral-300">Light mode</div>
+<div class="relative min-h-[360px] overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-900">
 <div class="pointer-events-none absolute inset-x-0 top-0 h-[800px] overflow-hidden transform-gpu">
 <div class="glow-hero absolute -inset-x-24 -top-40 h-[70vh] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
 </div>
-<div class="relative z-10 max-w-3xl px-8 py-16">
-<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Live website effect</div>
-<h3 class="heading mt-3 text-4xl text-white">The exact Zynk glow-hero treatment</h3>
-<p class="mt-4 max-w-2xl text-base leading-[150%] text-neutral-300">
-          The orange, magenta, violet and cyan blooms overlap behind the page header. A bottom mask fades the glow out before the clipping boundary so there is no hard edge.
-        </p>
+<div class="relative z-10 max-w-xl px-8 py-14">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Aurora example</div>
+<h3 class="heading mt-3 text-3xl text-neutral-900">Subtle movement, unmistakably Zynk</h3>
+<p class="mt-4 text-base leading-[150%] text-neutral-600">The same four-colour bloom sits over the website's light page background, preserving a soft, airy treatment.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="mb-3 text-sm font-semibold text-neutral-700 dark:text-neutral-300">Dark mode</div>
+<div class="relative min-h-[360px] overflow-hidden rounded-2xl border border-neutral-800 bg-black text-white">
+<div class="pointer-events-none absolute inset-x-0 top-0 h-[800px] overflow-hidden transform-gpu">
+<div class="glow-hero absolute -inset-x-24 -top-40 h-[70vh] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
+</div>
+<div class="relative z-10 max-w-xl px-8 py-14">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Aurora example</div>
+<h3 class="heading mt-3 text-3xl text-white">Subtle movement, unmistakably Zynk</h3>
+<p class="mt-4 text-base leading-[150%] text-neutral-300">On black, the same orange, magenta, violet and cyan gradients read richer and more luminous.</p>
+</div>
 </div>
 </div>
 </div>
@@ -570,9 +878,7 @@
 </div>
 <div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
 <h3 class="heading text-xl">Live placement</h3>
-<p class="mt-3 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">
-        The website does not use <code>.glow-hero</code> alone. The containing element and mask are part of the effect.
-      </p>
+<p class="mt-3 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">The website does not use <code>.glow-hero</code> alone. The oversized container and bottom mask are part of the canonical treatment.</p>
 <pre class="mt-5 overflow-x-auto rounded-xl bg-neutral-950 p-4 font-mono text-xs leading-[165%] text-neutral-200"><code>&lt;div class="
   pointer-events-none
   absolute inset-x-0 top-0
@@ -594,12 +900,12 @@
 </div>
 <p class="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
 <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Rule:</strong>
-    Treat these values as the canonical Zynk Aurora. Do not substitute a simplified two-colour gradient or change the blur, opacity, animation timing, transform values or mask unless the design system is intentionally revised.
+    The glow CSS, blur, animation, placement and mask are identical in both themes. Only the underlying page background changes: light uses the website light background; dark uses black. Do not replace the four-colour glow with a simplified gradient.
   </p>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="code-blocks">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="code-blocks">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Technical content</div>
-<h2 class="heading mt-3 text-4xl">Code blocks</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">18. Code blocks</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use a monospace font for code, keep the background dark in both themes and give examples enough padding and line-height to remain easy to scan.
     </p>
@@ -637,10 +943,10 @@
       <code class="rounded bg-neutral-100 px-1.5 py-0.5 font-mono text-[0.9em] text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">bg-neutral-100 dark:bg-neutral-800</code>
 </p>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="navbar">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="navbar">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Website structure</div>
-<h2 class="heading mt-3 text-4xl">Navigation bar</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">19. Navigation bar</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use a slim horizontal navbar with clear product links, restrained secondary actions and a single orange primary CTA.
     </p>
@@ -648,7 +954,7 @@
 <div class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
 <nav class="flex flex-wrap items-center gap-x-6 gap-y-3 px-6 py-4 bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50">
 <a class="mr-2 shrink-0" href="#">
-<span class="heading text-2xl tracking-tight text-neutral-900 dark:text-white">zynk</span>
+<img alt="Zynk" class="h-7 w-auto invert dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/>
 </a>
 <div class="flex min-w-0 flex-1 flex-wrap items-center gap-x-6 gap-y-3 text-sm text-neutral-600 dark:text-neutral-300">
 <a class="hover:text-orange-500" href="#">Autopilot</a>
@@ -692,10 +998,10 @@
       </p>
 </div>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="mega-menu">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="mega-menu">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Navigation pattern</div>
-<h2 class="heading mt-3 text-4xl">Mega menu</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">20. Mega menu</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use a mega menu when a single navigation item needs to expose several related products, solutions or resources at once. Group items by category and give each destination a short description.
     </p>
@@ -845,10 +1151,10 @@
 <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
     Use mega menus only for genuinely broad navigation. Keep category headings short, use Lucide icons consistently, avoid more than four columns, and make the whole menu easy to scan at a glance.
   </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="footer-example">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="footer-example">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Website structure</div>
-<h2 class="heading mt-3 text-4xl">Footer</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">21. Footer</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
       Use a dark, spacious footer with clear navigation groups, a strong contact action and a separate lower bar for company information and social links.
     </p>
@@ -856,7 +1162,7 @@
 <footer class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
 <div class="grid gap-10 px-8 py-10 lg:grid-cols-[1.5fr_repeat(4,1fr)] lg:px-10 lg:py-12">
 <div>
-<div class="heading text-3xl tracking-tight text-neutral-900 dark:text-white">zynk</div>
+<img alt="Zynk" class="h-8 w-auto invert dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/>
 <button class="mt-10 rounded-full bg-orange-500 px-4 py-1 text-sm font-semibold text-white hover:bg-orange-600">
         Get in Touch
       </button>
@@ -953,10 +1259,412 @@
 <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong>
     Keep the footer consistently dark in both themes. Use white for headings, neutral-400 for navigation, orange for hover/action states and a clear divider before company/legal information.
   </p>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16" id="practical-guidelines">
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="social-media">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Marketing creative</div>
+<h2 class="heading mt-3 text-4xl leading-[115%]">22. Social media graphics</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">Social graphics should look like Zynk pages translated into a fixed canvas: Neutral structure, Orange emphasis, Inter Tight 700 headlines, Lucide icons, restrained imagery and generous spacing. Keep each graphic focused on one message. Examples are theme-aware: light mode uses neutral-50/white with black headings, while dark mode uses neutral-900 with white headings. Headings must always be a single colour.</p>
+</div>
+<div class="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+<div><div class="text-sm font-semibold">Typography</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Inter Tight 700 for headlines. Inter for supporting copy. Keep text large enough to scan at feed size.</p></div>
+<div><div class="text-sm font-semibold">Colour</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Neutral backgrounds and surfaces, Orange 500 for emphasis and CTAs. Semantic colours only when they carry meaning.</p></div>
+<div><div class="text-sm font-semibold">Icons</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Lucide only. Use 24–32px icons in social artwork and keep stroke style consistent.</p></div>
+<div><div class="text-sm font-semibold">Composition</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">One primary message per visual. Prefer strong hierarchy and whitespace over decorative clutter.</p></div>
+<div><div class="text-sm font-semibold">Logo</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use the official Zynk SVG on every social graphic at h-10 (40px). Place it top left; invert only on light artwork backgrounds.</p></div><div><div class="text-sm font-semibold">Heading colour</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use one colour per heading. Black on light artwork, white on dark/image artwork. Never highlight individual heading words in orange.</p></div><div><div class="text-sm font-semibold">Theme</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Square social templates use a dark neutral-900 background only. Non-square social formats may use the documented light/dark treatments where specified.</p></div></div>
+</div><div class="mt-8 rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10" id="social-skill-usage">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-orange-400">How marketing should use the skill</div>
+<h3 class="heading mt-3 text-2xl">Describe the message, not the design system</h3>
+<p class="mt-3 max-w-4xl text-base leading-[150%] text-neutral-600 dark:text-neutral-300">Marketing should provide the message, audience, benefits and CTA. The Zynk Design System Skill should choose and apply the approved layout, typography, colours, spacing, Lucide icons and Aurora rules automatically.</p>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="overflow-x-auto rounded-xl bg-neutral-950 p-5 font-mono text-sm leading-[160%] text-neutral-200"><code>Using the Zynk Design System Skill, create a LinkedIn post graphic about [TOPIC].
+
+Key message: [MAIN MESSAGE]
+Supporting message: [ONE OR TWO SENTENCES]
+Benefits: [UP TO THREE BENEFITS]
+CTA: [CALL TO ACTION]
+Audience: [TARGET AUDIENCE]
+
+Create the finished social graphic, not just a description of it. Choose the most appropriate approved social pattern and follow the Zynk Design System exactly.</code></pre></div>
+</div>
+<div class="mt-12 grid gap-10 lg:grid-cols-2">
+<div>
+<div class="mb-4">
+<h3 class="heading text-2xl">Single headline over image</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use for X/Twitter announcements, articles and simple campaign messages. Template ratio: 16:9.</p>
+</div>
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-900 dark:border-neutral-700" style="background-image:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.62) 48%,rgba(10,10,10,.18) 100%),url('https://picsum.photos/1200/675?random=41');background-size:cover;background-position:center;"><img alt="Zynk" class="absolute left-8 top-8 h-10 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="absolute inset-0 flex flex-col justify-end p-8 text-white">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Zynk Insights</div>
+<div class="heading mt-3 max-w-xl text-4xl leading-[108%] text-white">Ask questions across all your business data.</div>
+</div>
+</div>
+<p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Rule:</strong> darken the image enough for reliable white-text contrast. Keep to one headline and optional eyebrow.</p>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-single-headline-over-image">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create an X/Twitter post graphic announcing Zynk Insights AI.
+
+Headline: Ask questions across all your business data.
+Eyebrow: Zynk Insights
+Background: Use a relevant business/technology image with the approved dark contrast overlay.
+Audience: Finance and operations teams.
+
+Create the finished 16:9 graphic. Use the approved single-headline-over-image pattern. Do not add bullets or a CTA inside the artwork.
+Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left of the artwork. Invert only if the artwork background is light.
+</code></pre></div>
+</div></div>
+<div>
+<div class="mb-4">
+<h3 class="heading text-2xl">Square feature post</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use for LinkedIn or cross-platform posts where the message needs headline, context, benefits and a CTA. Template ratio: 1:1.</p>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-900 p-7 text-neutral-50 relative"><img alt="Zynk" class="absolute left-8 top-8 h-10 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="flex h-full flex-col pt-16">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Data integration</div>
+<h4 class="heading mt-3 max-w-[88%] text-4xl leading-[108%] text-neutral-50">Connect once. Automate every day.</h4>
+<p class="mt-4 max-w-lg text-base leading-[150%] text-neutral-300">Move clean, reliable data between ecommerce, CRM and accounting systems.</p>
+<ul class="mt-6 space-y-4 text-lg font-medium text-neutral-200">
+<li class="flex items-center gap-3"><i class="h-6 w-6 shrink-0 text-orange-500" data-lucide="shopping-cart"></i><span>Synchronise orders automatically</span></li>
+<li class="flex items-center gap-3"><i class="h-6 w-6 shrink-0 text-orange-500" data-lucide="database"></i><span>Keep finance data accurate</span></li>
+<li class="flex items-center gap-3"><i class="h-6 w-6 shrink-0 text-orange-500" data-lucide="workflow"></i><span>Remove repetitive processes</span></li>
+</ul>
+<div class="mt-auto pt-7"><span class="inline-flex rounded-full bg-orange-500 px-5 py-1.5 text-base font-semibold text-white">Explore integrations</span></div>
+</div>
+</div>
+<p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Rule:</strong> use larger bullet copy than website lists. Keep to three points where possible.</p>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-square-feature-post">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create a square LinkedIn graphic about connecting Sage 50 and Shopify inventory.
+
+Headline: Keep Sage 50 and Shopify inventory automatically in sync.
+Subheading: Remove manual stock updates and reduce overselling.
+Benefits:
+- Automatic inventory updates
+- Reduce overselling
+- No manual stock reconciliation
+CTA: Discover the integration
+Audience: UK ecommerce businesses using Sage 50.
+
+Create the finished 1:1 graphic using the approved square feature post pattern on a dark neutral-900 background with Lucide icons and a pill CTA. Keep the heading a single white colour.
+Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left of the artwork.
+</code></pre></div>
+</div></div>
+<div id="social-square-image">
+<div class="mb-4">
+<h3 class="heading text-2xl">Square feature post with image</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use when photography, product imagery or a workflow visual adds context. Treat the image exactly like the single-headline-over-image pattern: full-bleed photography with a dark contrast overlay, not a separate faded image layer.</p>
+</div>
+<div class="relative aspect-square overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-900 text-neutral-50" style="background-image:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.82) 48%,rgba(10,10,10,.42) 100%),url('https://picsum.photos/900/900?random=58');background-size:cover;background-position:center;">
+<img alt="Zynk" class="absolute left-8 top-8 z-20 h-10 w-auto" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="absolute inset-0 z-10 flex flex-col justify-end p-8 text-white">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Inventory automation</div>
+<h4 class="heading mt-3 max-w-[78%] text-4xl leading-[108%] text-white">Keep stock accurate everywhere.</h4>
+<p class="mt-4 max-w-[70%] text-base leading-[150%] text-neutral-200">Synchronise Sage and ecommerce inventory without manual reconciliation.</p>
+<div class="mt-7"><span class="inline-flex rounded-full bg-orange-500 px-5 py-1.5 text-base font-semibold text-white">See how it works</span></div>
+</div>
+</div>
+<p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Image rule:</strong> use full-bleed imagery with the same dark contrast overlay as the single-headline-over-image pattern. Do not use masks, radial fades or a separately cropped image layer.</p>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-square-feature-image">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create a square LinkedIn feature graphic about automated inventory synchronisation.
+
+Headline: Keep stock accurate everywhere.
+Supporting message: Synchronise Sage and ecommerce inventory without manual reconciliation.
+CTA: See how it works
+Image: Use a relevant product or workflow image as a full-bleed background.
+Audience: UK ecommerce businesses.
+
+Create the finished 1:1 graphic using the approved square feature-with-image pattern. Apply the same full-bleed image treatment as the Single headline over image pattern: cover the canvas with the image and add a strong dark neutral contrast overlay so white copy remains highly legible. Do not use a radial fade, mask or separate image panel. Keep the heading a single white colour. Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left.</code></pre></div>
+</div>
+</div><div id="social-webinar-post">
+<div class="mb-4">
+<h3 class="heading text-2xl">Square webinar / meet-up post</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use for webinars, meet-ups and speaking events. Use the speaker/event image as a full-bleed background with the same dark contrast treatment as the single-headline-over-image pattern.</p>
+</div>
+<div class="relative aspect-square overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-900 text-neutral-50" style="background-image:linear-gradient(90deg,rgba(10,10,10,.96) 0%,rgba(10,10,10,.86) 52%,rgba(10,10,10,.48) 100%),url('https://picsum.photos/900/900?random=59');background-size:cover;background-position:center;">
+<img alt="Zynk" class="absolute left-8 top-8 z-20 h-10 w-auto" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="absolute inset-0 z-10 flex flex-col justify-end p-8 text-white">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-400">Live webinar</div>
+<h4 class="heading mt-3 max-w-[82%] text-[2.15rem] leading-[108%] text-white">Build smarter integrations with Zynk Insights</h4>
+<p class="mt-3 max-w-[72%] text-sm leading-[150%] text-neutral-200">See how teams can ask questions across ecommerce, accounting and CRM data.</p>
+<div class="mt-5 space-y-2.5 text-sm font-medium text-neutral-100">
+<div class="flex items-center gap-2"><i class="h-5 w-5 shrink-0 text-orange-400" data-lucide="calendar-days"></i><span>Wednesday 22 October 2026</span></div>
+<div class="flex items-center gap-2"><i class="h-5 w-5 shrink-0 text-orange-400" data-lucide="clock-3"></i><span>16:00–17:00 BST</span></div>
+<div class="flex items-center gap-2"><i class="h-5 w-5 shrink-0 text-orange-400" data-lucide="video"></i><span>Live online · Free to attend</span></div>
+</div>
+<div class="mt-6"><span class="inline-flex rounded-full bg-orange-500 px-5 py-1.5 text-sm font-semibold text-white">Save your spot</span></div>
+</div>
+</div>
+<p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Event rule:</strong> show event type, title, date, time and one CTA. Use the speaker/event photograph as full-bleed artwork with a strong dark overlay. Do not use a cut-out portrait, mask or faded image panel.</p>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-webinar-post">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create a square LinkedIn graphic promoting a live Zynk webinar.
+
+Event: Build smarter integrations with Zynk Insights
+Date: Wednesday 22 October 2026
+Time: 16:00–17:00 BST
+Format: Live online, free to attend
+Supporting message: See how teams can ask questions across ecommerce, accounting and CRM data.
+CTA: Save your spot
+Speaker/event image: Use https://picsum.photos/900/900 as the full-bleed background image.
+
+Create the finished 1:1 graphic using the approved webinar / meet-up pattern. Apply the same full-bleed image treatment as the Single headline over image pattern: cover the canvas with the image and add a strong dark neutral contrast overlay so white copy and event details remain highly legible. Do not use a radial fade, mask, cut-out portrait or separate image panel. Keep the heading a single white colour. Use Lucide calendar, clock and video icons. Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left.</code></pre></div>
+</div>
+</div></div>
+<div class="mt-14">
+<div class="mb-4 max-w-3xl">
+<h3 class="heading text-2xl">LinkedIn carousel</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use a statement-led first slide, a clear directional cue, consistent middle slides and a final CTA. Treat the set as one story rather than unrelated graphics.</p>
+</div>
+<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+<div class="aspect-square rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-900 p-7 text-neutral-50 relative"><img alt="Zynk" class="absolute left-7 top-7 h-5 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-400 mt-10">01 · Insight</div>
+<div class="heading mt-5 text-3xl leading-[110%] text-white">Your systems should work together, not create more admin.</div>
+<div class="absolute bottom-7 right-7 flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 text-white"><i class="h-5 w-5" data-lucide="arrow-right"></i></div>
+</div>
+<div class="aspect-square rounded-2xl border border-neutral-700 bg-neutral-900 p-7 text-neutral-50 relative"><img alt="Zynk" class="absolute left-7 top-7 h-5 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<i class="h-7 w-7 text-orange-500 mt-10" data-lucide="repeat-2"></i>
+<div class="heading mt-6 text-2xl text-white">Automate repetitive work</div>
+<p class="mt-3 text-base leading-[150%] text-neutral-300">Move orders, customers and products without manual re-keying.</p>
+</div>
+<div class="aspect-square rounded-2xl border border-neutral-700 bg-neutral-900 p-7 text-neutral-50 relative"><img alt="Zynk" class="absolute left-7 top-7 h-5 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<i class="h-7 w-7 text-orange-500 mt-10" data-lucide="circle-check"></i>
+<div class="heading mt-6 text-2xl text-white">Improve data quality</div>
+<p class="mt-3 text-base leading-[150%] text-neutral-300">Apply mapping and validation before data reaches finance systems.</p>
+</div>
+<div class="flex aspect-square flex-col rounded-2xl border border-neutral-700 bg-neutral-900 p-7 text-neutral-50 relative"><img alt="Zynk" class="absolute left-7 top-7 h-5 w-auto z-20" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-100 mt-10">04 · Next step</div>
+<div class="heading mt-5 text-3xl leading-[110%] text-white">See what Zynk can automate for you.</div>
+<div class="mt-auto pt-6"><span class="inline-flex rounded-full px-5 py-1.5 text-base font-semibold bg-orange-500 text-white">Talk to Zynk</span></div>
+</div>
+</div>
+<p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Carousel rule:</strong>Carousel slides use the same dark neutral-900 background treatment throughout the set.</p>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-linkedin-carousel">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create a 5-slide LinkedIn carousel about why businesses should automate order processing.
+
+Slide 1: Stop manually entering ecommerce orders into your accounting system.
+Slide 2: Manual entry wastes valuable staff time.
+Slide 3: Re-keying orders introduces avoidable errors.
+Slide 4: Zynk automatically moves orders between ecommerce and accounting systems.
+Slide 5: Automate your order processing with Zynk. CTA: Discover Zynk.
+
+Create the finished carousel graphics. Use the approved LinkedIn carousel pattern, keep slide positions consistent, use the next arrow on slide 1 only, and use the final slide for the CTA.
+Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left of the artwork. Use the logo normally on the dark artwork background.
+</code></pre></div>
+</div></div>
+<div class="mt-14 grid gap-10 lg:grid-cols-2">
+<div>
+<div class="mb-4">
+<h3 class="heading text-2xl">Aurora brand post</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use for Zynk brand statements, AI/innovation stories and launches where photography is unnecessary.</p>
+</div>
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 text-neutral-950 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"><img alt="Zynk" class="absolute left-8 top-8 h-10 w-auto z-20 invert dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/>
+<div class="pointer-events-none absolute inset-x-0 top-0 h-[800px] overflow-hidden transform-gpu">
+<div class="glow-hero absolute -inset-x-24 -top-40 h-[70vh] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
+</div>
+<div class="relative z-10 flex h-full flex-col justify-end p-8">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500 dark:text-orange-400">Zynk Aurora</div>
+<div class="heading mt-3 max-w-xl text-4xl leading-[108%] text-neutral-950 dark:text-white">The integration layer for the AI era.</div>
+<p class="mt-4 max-w-lg text-base leading-[150%] text-neutral-700 dark:text-neutral-300">Use the canonical Aurora exactly as documented. Do not substitute a generic gradient.</p>
+</div>
+</div>
+<div class="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900" id="prompt-aurora-brand-post">
+<div class="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">Example prompt</div>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="mt-3 whitespace-pre-wrap font-mono text-xs leading-[160%] text-neutral-700 dark:text-neutral-300"><code>Using the Zynk Design System Skill, create a LinkedIn brand post announcing Zynk's AI integration direction.
+
+Eyebrow: Zynk AI
+Headline: The integration layer for the AI era.
+Supporting message: Connect trusted business data across ecommerce, accounting and CRM so AI can work with the information that matters.
+Audience: Business and technology leaders.
+
+Create both light and dark 16:9 treatments using the approved Aurora social post pattern and the exact canonical Zynk glow-hero. Do not invent a new gradient. Preserve identical layout across both themes.
+Include the official Zynk logo from https://assets.zynk.com/images/logo_header.svg at the top left of the artwork. Invert only if the artwork background is light.
+</code></pre></div>
+</div></div>
+<div>
+<div class="mb-4">
+<h3 class="heading text-2xl">Social graphic checklist</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use this before exporting any social creative.</p>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<ul class="space-y-4"><li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Use the official Zynk logo on every social graphic at h-10 (40px); top left, inverted only on light artwork backgrounds</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Inter Tight 700 headline and Inter supporting text</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Orange 500 is the primary accent, not the entire composition</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Use Lucide icons only and keep a consistent stroke weight</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>One message, one obvious visual hierarchy and one CTA at most</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Keep important text away from outer edges and platform cropping zones</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>For Aurora posts, use the exact canonical glow-hero implementation</span></li>
+<li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>Square social templates use a dark neutral-900 background only. Non-square social formats may use the documented light/dark treatments where specified.</span></li><li class="flex gap-3"><i class="mt-0.5 h-5 w-5 shrink-0 text-orange-500" data-lucide="check"></i><span>For image-led square social posts, use full-bleed photography with the same strong dark neutral contrast overlay as the Single headline over image pattern; do not use radial fades, masks or separate image panels.</span></li></ul>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="slide-presentations">
+<div class="max-w-3xl">
+<div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Presentation system</div>
+<h2 class="heading mt-3 text-4xl leading-[115%]">23. Slide presentations</h2>
+<p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">
+      Use standard 16:9 widescreen slides. Presentation slides are deliberately simpler than website sections: start with the title, avoid eyebrows, reduce chrome and let typography, imagery and whitespace do most of the work.
+    </p>
+</div>
+<div class="mt-10 grid gap-5 lg:grid-cols-3">
+<div class="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Aspect ratio</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use <strong class="text-neutral-900 dark:text-neutral-50">16:9 widescreen</strong> for every standard Zynk deck.</p>
+<div class="mt-4 aspect-video rounded-lg bg-neutral-100 dark:bg-neutral-900"></div>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Typography</h3>
+<p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Inter Tight 700 for titles. Inter for supporting copy.</p>
+<ul class="mt-4 space-y-1.5 text-sm text-neutral-600 dark:text-neutral-300">
+<li><strong>Title:</strong> 48–64px</li>
+<li><strong>Slide heading:</strong> 36–48px</li>
+<li><strong>Body:</strong> 20–26px</li>
+<li><strong>Footnotes:</strong> 12–14px</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-xl">Slide rules</h3>
+<ul class="mt-4 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
+<li class="flex gap-2"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>No eyebrows on presentation slides.</span></li>
+<li class="flex gap-2"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>One idea per slide.</span></li>
+<li class="flex gap-2"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Prefer fewer, larger elements over nested cards.</span></li>
+<li class="flex gap-2"><i class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" data-lucide="check"></i><span>Zynk logo: top left on the first slide; bottom right on every other slide.</span></li></ul>
+</div>
+</div>
+<div class="mt-12 grid gap-8 lg:grid-cols-2">
+<div>
+<h3 class="heading text-2xl">Title / Aurora slide</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: Zynk logo top-left, large title aligned left, optional short subtitle beneath. Aurora fills the full slide background with no border or inset frame.</p>
+<div class="relative mt-4 aspect-video overflow-hidden rounded-xl bg-neutral-900 text-white">
+<div class="pointer-events-none absolute inset-x-0 top-0 h-full overflow-hidden">
+<div class="glow-hero absolute -inset-x-24 -top-40 h-[70vh] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
+</div>
+<div class="relative z-10 flex h-full flex-col justify-center px-8 py-7"><img alt="Zynk" class="absolute left-7 top-6 h-7 w-auto" src="https://assets.zynk.com/images/logo_header.svg"/>
+<h4 class="heading max-w-xl text-5xl leading-[105%] text-white">Data Integration Made Easy</h4>
+<p class="mt-4 max-w-lg text-lg leading-[150%] text-neutral-300">Connecting ecommerce, accounting and operational systems.</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="heading text-2xl">Heading + bullets</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: title top-left, then 3–5 large bullets directly below. Keep chevrons close to the text using gap-2. Zynk logo sits bottom-right.</p>
+<div class="mt-4 aspect-video rounded-xl bg-white px-8 py-7 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700 relative">
+<h4 class="heading max-w-xl text-4xl leading-[110%]">Why automate your data flows?</h4>
+<ul class="mt-7 space-y-3.5 text-xl text-neutral-700 dark:text-neutral-300">
+<li class="flex items-start gap-2"><i class="mt-0.5 h-6 w-6 shrink-0 text-orange-500" data-lucide="chevron-right"></i><span>Reduce manual data entry</span></li>
+<li class="flex items-start gap-2"><i class="mt-0.5 h-6 w-6 shrink-0 text-orange-500" data-lucide="chevron-right"></i><span>Improve accuracy across systems</span></li>
+<li class="flex items-start gap-2"><i class="mt-0.5 h-6 w-6 shrink-0 text-orange-500" data-lucide="chevron-right"></i><span>Give teams more reliable information</span></li>
+</ul>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div>
+</div>
+<div>
+<h3 class="heading text-2xl">Title with image</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: exact 50/50 split. Text occupies the left half and image fills the right half edge-to-edge. Zynk logo sits bottom-right.</p>
+<div class="mt-4 grid aspect-video overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700 relative grid-cols-2">
+<div class="flex flex-col justify-center px-7 py-6">
+<h4 class="heading text-4xl leading-[110%]">From manual updates to automated workflows</h4>
+<p class="mt-4 text-lg leading-[150%] text-neutral-600 dark:text-neutral-300">Use imagery to support the story, not to decorate empty space.</p>
+</div>
+<img alt="Example slide image" class="h-full w-full object-cover" src="https://picsum.photos/640/360?random=31"/>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div>
+</div>
+<div>
+<h3 class="heading text-2xl">Collection of stats</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: title top-left, then three evenly weighted stat columns with subtle vertical dividers. Keep number sizes consistent. Zynk logo sits bottom-right.</p>
+<div class="mt-4 aspect-video rounded-xl bg-white px-8 py-7 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700 relative">
+<h4 class="heading text-4xl leading-[110%]">The impact of automation</h4>
+<div class="mt-9 grid grid-cols-3 divide-x divide-neutral-200 dark:divide-neutral-700">
+<div class="pr-5"><div class="heading text-5xl text-orange-500">42k</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">records processed</div></div>
+<div class="px-5"><div class="heading text-5xl text-orange-500">99%</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">successful runs</div></div>
+<div class="pl-5"><div class="heading text-5xl text-orange-500">12h</div><div class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">saved weekly</div></div>
+</div>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div>
+</div>
+<div>
+<h3 class="heading text-2xl">Process slide</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: title top-left, then 3–5 evenly spaced steps on one horizontal connected line. Keep each step visually equal and the Zynk logo bottom-right.</p>
+<div class="mt-4 aspect-video rounded-xl bg-white px-8 py-7 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700 relative">
+<h4 class="heading text-4xl leading-[110%]">Three steps to automation</h4>
+<div class="relative mt-9 grid grid-cols-3 gap-5">
+<div class="pointer-events-none absolute left-[15%] right-[15%] top-5 h-px bg-neutral-200 dark:bg-neutral-700"></div>
+<div class="relative z-10 text-center">
+<div class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">01</div>
+<i class="mx-auto mt-5 h-7 w-7 text-orange-500" data-lucide="plug-zap"></i>
+<div class="heading mt-3 text-xl">Connect</div>
+<p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">Choose the systems.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">02</div>
+<i class="mx-auto mt-5 h-7 w-7 text-orange-500" data-lucide="git-compare-arrows"></i>
+<div class="heading mt-3 text-xl">Map</div>
+<p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">Transform the data.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">03</div>
+<i class="mx-auto mt-5 h-7 w-7 text-orange-500" data-lucide="play"></i>
+<div class="heading mt-3 text-xl">Automate</div>
+<p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">Run the workflow.</p>
+</div>
+</div>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div>
+</div>
+<div>
+<h3 class="heading text-2xl">Quote slide</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: title top-left, then 2–3 concise quotes in equal columns with orange left rules. Keep attribution small and logo bottom-right.</p>
+<div class="mt-4 aspect-video rounded-xl bg-white px-8 py-7 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700 relative">
+<h4 class="heading text-4xl leading-[110%]">What customers say</h4>
+<div class="mt-7 grid grid-cols-3 gap-5">
+<blockquote class="border-l-4 border-orange-500 pl-4">
+<p class="text-base italic leading-[150%] text-neutral-700 dark:text-neutral-300">“We removed hours of repetitive order entry every week.”</p>
+<footer class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">Customer · Retail</footer>
+</blockquote>
+<blockquote class="border-l-4 border-orange-500 pl-4">
+<p class="text-base italic leading-[150%] text-neutral-700 dark:text-neutral-300">“Our teams now work from the same up-to-date information.”</p>
+<footer class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">Customer · Distribution</footer>
+</blockquote>
+<blockquote class="border-l-4 border-orange-500 pl-4">
+<p class="text-base italic leading-[150%] text-neutral-700 dark:text-neutral-300">“The integration just runs, which is exactly what we needed.”</p>
+<footer class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">Customer · Ecommerce</footer>
+</blockquote>
+</div>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div>
+</div>
+<div><h3 class="heading text-2xl">Customer logos</h3><p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: title and short context top-left. Left-align every customer logo in a 3-column grid and use the same gap-5 horizontally and vertically. Never centre individual logos.</p><div class="relative mt-4 aspect-video rounded-xl bg-white px-8 py-7 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700"><h4 class="heading text-4xl leading-[110%]">Trusted by businesses that rely on connected data</h4><p class="mt-3 text-base text-neutral-500 dark:text-neutral-400">Keep customer marks evenly sized, left aligned and spaced with the same horizontal and vertical gap. Do not add card chrome around each logo.</p><div class="mt-7 grid grid-cols-3 items-center gap-5"><img alt="Example customer logo 1" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=51"/><img alt="Example customer logo 2" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=52"/><img alt="Example customer logo 3" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=53"/><img alt="Example customer logo 4" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=54"/><img alt="Example customer logo 5" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=55"/><img alt="Example customer logo 6" class="h-12 w-28 rounded-lg object-cover grayscale opacity-70 dark:opacity-80 justify-self-start" src="https://picsum.photos/200?random=56"/></div><img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/></div></div><div>
+<h3 class="heading text-2xl">Customer case study</h3>
+<p class="mt-2 text-sm leading-[150%] text-neutral-500 dark:text-neutral-400">Layout: exact 50/50 split. Image fills the left half edge-to-edge; outcome-led content fills the right half. Use one strong metric and concise supporting labels. Keep the Zynk logo bottom-right with clear breathing room.</p>
+<div class="relative mt-4 grid aspect-video grid-cols-2 overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700">
+<img alt="Example customer case study" class="h-full w-full object-cover" src="https://picsum.photos/640/480?random=61"/>
+<div class="flex flex-col justify-center px-7 py-6">
+<h4 class="heading text-4xl leading-[110%]">How a retailer automated order processing</h4>
+<div class="heading mt-5 text-5xl text-orange-500">60%</div>
+<div class="mt-1 text-sm font-semibold text-neutral-700 dark:text-neutral-300">less manual order administration</div>
+</div>
+<img alt="Zynk" class="absolute bottom-5 right-6 h-5 w-auto invert opacity-80 dark:invert-0" src="https://assets.zynk.com/images/logo_header.svg"/>
+</div>
+</div></div>
+<div class="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h3 class="heading text-2xl">Prompt example</h3>
+<p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">Ask for the story and slide types. The Skill handles styling.</p>
+<div class="prompt-copy-wrapper relative mt-5"><button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button><pre class="overflow-x-auto rounded-xl bg-neutral-950 p-5 font-mono text-sm leading-[165%] text-neutral-200"><code>Using the Zynk Design System Skill, create a 10-slide 16:9 presentation for a sales meeting about connecting Shopify to Sage 50.
+
+Audience: UK ecommerce businesses using Sage 50.
+Goal: explain the problem, show the value of automation and end with a clear call to action.
+
+Include:
+- Aurora title slide
+- Problem slide
+- Heading + bullets slide
+- Title with image slide
+- Stats slide
+- Process slide
+- Multi-quote customer slide
+- Customer logos slide
+- Customer case study slide
+- Aurora closing slide
+
+Do not use eyebrows on slides. Keep layouts light and spacious rather than card-heavy. Follow the Zynk Design System exactly for typography, colours, Lucide icons, spacing and Aurora usage.
+
+Use the official Zynk logo from https://assets.zynk.com/images/logo_header.svg. Place it top left on the first slide and bottom right on all other slides. Invert it on light slide backgrounds.</code></pre></div>
+</div>
+<p class="mt-6 text-sm text-neutral-500 dark:text-neutral-400"><strong class="font-semibold text-neutral-700 dark:text-neutral-300">Guidance:</strong> Slides should feel lighter than application UI. Avoid nested card-on-card treatments. Use the official Zynk logo top left on the first slide and bottom right on all other slides. Invert the logo on light backgrounds. In an exported deck the slide itself should be edge-to-edge.</p>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="mx-auto max-w-7xl py-16 scroll-mt-24" id="practical-guidelines">
 <div class="max-w-3xl">
 <div class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-500">Practical standards</div>
-<h2 class="heading mt-3 text-4xl">Patterns for consistent Zynk experiences</h2>
+<h2 class="heading mt-3 text-4xl leading-[115%]">24. Practical standards</h2>
 <p class="mt-4 text-lg leading-[160%] text-neutral-600 dark:text-neutral-300">A focused set of reusable rules for developers and marketing. Use these patterns before introducing a new treatment so Zynk websites and products continue to feel like the same family.</p>
 </div>
 <div class="mt-12">
@@ -973,7 +1681,7 @@
 <h3 class="heading text-3xl">Cards</h3>
 <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 <div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="font-semibold">Standard card</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Default container for grouped information.</p></div>
-<div class="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-neutral-300 hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600"><div class="font-semibold">Interactive card</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use when the entire card is clickable.</p><a class="mt-4 inline-block text-sm font-semibold text-orange-500 hover:text-orange-600" href="#">View details →</a></div>
+<div class="rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600"><div class="font-semibold">Interactive card</div><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Use when the entire card is clickable.</p><a class="mt-4 inline-block text-sm font-semibold text-orange-500 hover:text-orange-600" href="#">View details →</a></div>
 <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 dark:border-orange-500/20 dark:bg-orange-500/10"><div class="font-semibold text-orange-700 dark:text-orange-400">Featured card</div><p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Reserve orange tinting for genuinely important content.</p></div>
 <div class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800"><div class="text-sm text-neutral-500 dark:text-neutral-400">Transactions today</div><div class="heading mt-2 text-3xl">12,480</div><div class="mt-2 text-sm font-medium text-emerald-700 dark:text-emerald-400">Healthy</div></div>
 </div>
@@ -1014,9 +1722,9 @@
 <h3 class="heading text-3xl">Dropdown</h3>
 <div class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
 <label class="text-sm font-medium" for="standard-select">Connection</label>
-<select class="mt-2 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2 text-base focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-700 dark:bg-neutral-800" id="standard-select">
+<div class="relative"><select class="mt-2 w-full rounded-xl border border-neutral-300 bg-white focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-700 dark:bg-neutral-800 appearance-none pl-3 pr-10 h-9 text-sm" id="standard-select">
 <option>Shopify</option><option>Sage 50</option><option>HubSpot</option>
-</select>
+</select><i class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" data-lucide="chevron-down"></i></div>
 </div>
 </div>
 <div>
@@ -1087,17 +1795,39 @@
 </div>
 </div>
 </div>
-</section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800" id="colours">
-<h2 class="text-2xl">Colour reference</h2>
-<div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
-<div><div class="h-14 rounded-lg bg-neutral-50 ring-1 ring-neutral-200"></div><div class="mt-2 text-xs">neutral-50</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-100"></div><div class="mt-2 text-xs">neutral-100</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-200"></div><div class="mt-2 text-xs">neutral-200</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-400"></div><div class="mt-2 text-xs">neutral-400</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-700"></div><div class="mt-2 text-xs">neutral-700</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-800"></div><div class="mt-2 text-xs">neutral-800</div></div>
-<div><div class="h-14 rounded-lg bg-neutral-900"></div><div class="mt-2 text-xs">neutral-900</div></div>
-<div><div class="h-14 rounded-lg bg-orange-500"></div><div class="mt-2 text-xs">orange-500</div></div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><div class="mx-auto max-w-7xl" data-section-divider="true"><hr class="border-0 border-t border-neutral-200 dark:border-neutral-700"/></div><section class="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800 scroll-mt-24" id="colours">
+<h2 class="heading text-4xl leading-[115%]">25. Colour reference</h2>
+<p class="mt-3 max-w-3xl text-base leading-[150%] text-neutral-500 dark:text-neutral-400">Start with the approved role colours below. The complete Tailwind Neutral and Orange scales are shown underneath for reference, but developers and AI should prefer role-based tokens rather than choosing arbitrary shades.</p>
+<div class="mt-8">
+<h3 class="heading text-2xl">Colours we use</h3>
+<div class="mt-5 overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-700">
+<table class="w-full min-w-[900px] text-left text-sm">
+<thead class="bg-neutral-100 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300"><tr><th class="px-5 py-3 font-semibold">Role</th><th class="px-5 py-3 font-semibold">Light mode</th><th class="px-5 py-3 font-semibold">Dark mode</th></tr></thead>
+<tbody class="bg-white dark:bg-neutral-800"><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Page background</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#fafafa"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-50</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fafafa</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(250, 250, 250)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#171717"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-900</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#171717</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(23, 23, 23)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Card</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ffffff"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">white</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ffffff</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(255, 255, 255)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#262626"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-800</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#262626</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(38, 38, 38)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Card border</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#e5e5e5"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-200</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#e5e5e5</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(229, 229, 229)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#404040"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-700</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#404040</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(64, 64, 64)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Primary text</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#171717"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-900</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#171717</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(23, 23, 23)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#fafafa"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-50</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fafafa</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(250, 250, 250)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Secondary text</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#404040"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-700</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#404040</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(64, 64, 64)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#d4d4d4"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-300</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#d4d4d4</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(212, 212, 212)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Muted text</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#737373"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#737373</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(115, 115, 115)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#a3a3a3"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-400</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#a3a3a3</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(163, 163, 163)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Surface</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#f5f5f5"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-100</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f5f5f5</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(245, 245, 245)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#262626"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-800</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#262626</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(38, 38, 38)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Elevated surface</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ffffff"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">white</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ffffff</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(255, 255, 255)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#404040"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">neutral-700</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#404040</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(64, 64, 64)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Primary CTA</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#f97316"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f97316</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(249, 115, 22)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#f97316"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f97316</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(249, 115, 22)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Primary hover</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ea580c"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-600</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ea580c</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(234, 88, 12)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ea580c"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-600</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ea580c</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(234, 88, 12)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Featured background</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#fff7ed"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-50</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fff7ed</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(255, 247, 237)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:rgba(249, 115, 22, 0.10)"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-500/10</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgba(249, 115, 22, 0.10)</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgba(249, 115, 22, 0.10)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Featured border</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#fed7aa"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-200</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fed7aa</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(254, 215, 170)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:rgba(249, 115, 22, 0.20)"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">orange-500/20</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgba(249, 115, 22, 0.20)</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgba(249, 115, 22, 0.20)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Success</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#10b981"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">emerald-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#10b981</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(16, 185, 129)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#10b981"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">emerald-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#10b981</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(16, 185, 129)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Warning</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#f59e0b"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">amber-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f59e0b</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(245, 158, 11)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#f59e0b"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">amber-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f59e0b</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(245, 158, 11)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Error</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ef4444"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">red-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ef4444</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(239, 68, 68)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#ef4444"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">red-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ef4444</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(239, 68, 68)</div></div></div></td></tr><tr class="border-t border-neutral-200 dark:border-neutral-700"><td class="px-5 py-3 font-medium align-top">Information</td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#3b82f6"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">blue-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#3b82f6</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(59, 130, 246)</div></div></div></td><td class="px-5 py-3 align-top"><div class="flex items-start gap-3"><span class="mt-0.5 h-9 w-9 shrink-0 rounded-lg border border-neutral-200 shadow-sm dark:border-neutral-600" style="background:#3b82f6"></span><div class="min-w-0"><div class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-200">blue-500</div><div class="mt-1 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#3b82f6</div><div class="mt-0.5 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">rgb(59, 130, 246)</div></div></div></td></tr></tbody>
+</table>
+</div>
+</div>
+<div class="mt-10"><div class="flex flex-wrap items-end justify-between gap-3"><div><h3 class="heading text-2xl">Tailwind Neutral 50–950</h3><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Complete Tailwind Neutral scale available to the system. Prefer the approved role tokens above unless a documented component requires another shade.</p></div></div><div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11"><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-700" style="background:#fafafa"><span class="text-[11px] font-semibold">neutral-50</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fafafa</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-700" style="background:#f5f5f5"><span class="text-[11px] font-semibold">neutral-100</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f5f5f5</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900" style="background:#e5e5e5"><span class="text-[11px] font-semibold">neutral-200</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#e5e5e5</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900" style="background:#d4d4d4"><span class="text-[11px] font-semibold">neutral-300</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#d4d4d4</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#a3a3a3"><span class="text-[11px] font-semibold">neutral-400</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#a3a3a3</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#737373"><span class="text-[11px] font-semibold">neutral-500</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#737373</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#525252"><span class="text-[11px] font-semibold">neutral-600</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#525252</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#404040"><span class="text-[11px] font-semibold">neutral-700</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#404040</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#262626"><span class="text-[11px] font-semibold">neutral-800</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#262626</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#171717"><span class="text-[11px] font-semibold">neutral-900</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#171717</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#0a0a0a"><span class="text-[11px] font-semibold">neutral-950</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#0a0a0a</div></div></div></div>
+<div class="mt-10"><div class="flex flex-wrap items-end justify-between gap-3"><div><h3 class="heading text-2xl">Tailwind Orange 50–950</h3><p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Complete Tailwind Orange scale available to the system. Prefer the approved role tokens above unless a documented component requires another shade.</p></div></div><div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11"><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-700" style="background:#fff7ed"><span class="text-[11px] font-semibold">orange-50</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fff7ed</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-700" style="background:#ffedd5"><span class="text-[11px] font-semibold">orange-100</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ffedd5</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900" style="background:#fed7aa"><span class="text-[11px] font-semibold">orange-200</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fed7aa</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-neutral-900" style="background:#fdba74"><span class="text-[11px] font-semibold">orange-300</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fdba74</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#fb923c"><span class="text-[11px] font-semibold">orange-400</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#fb923c</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#f97316"><span class="text-[11px] font-semibold">orange-500</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#f97316</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#ea580c"><span class="text-[11px] font-semibold">orange-600</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#ea580c</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#c2410c"><span class="text-[11px] font-semibold">orange-700</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#c2410c</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#9a3412"><span class="text-[11px] font-semibold">orange-800</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#9a3412</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#7c2d12"><span class="text-[11px] font-semibold">orange-900</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#7c2d12</div></div><div><div class="flex h-16 items-end rounded-xl p-2 text-white" style="background:#431407"><span class="text-[11px] font-semibold">orange-950</span></div><div class="mt-2 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">#431407</div></div></div></div>
+<div class="mt-8 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-900">
+<p class="text-sm text-neutral-600 dark:text-neutral-300">Reference the official Tailwind palette when checking colour values or additional utilities.</p>
+<a class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600" href="https://tailwindcss.com/docs/colors" rel="noopener noreferrer" target="_blank">Tailwind CSS colour reference <i class="h-4 w-4" data-lucide="external-link"></i></a>
+</div>
+<div class="mt-8 flex justify-start" data-back-to-top="true"><a class="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-400" href="#top"><i class="h-4 w-4" data-lucide="arrow-up"></i><span>Back to top</span></a></div></section><section class="mx-auto max-w-7xl py-16" id="document-feedback">
+<div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6 dark:border-neutral-700 dark:bg-neutral-800">
+<h2 class="heading text-2xl">This is a live document</h2>
+<p class="mt-3 max-w-3xl text-base leading-[160%] text-neutral-600 dark:text-neutral-300">Any comments, improvements or suggestions? Please email <a class="font-semibold text-orange-500 hover:text-orange-600" href="mailto:marketing@zynk.com">marketing@zynk.com</a> with an AI prompt describing exactly what you would like changed and we will update the design system.</p>
+<div class="mt-6 text-sm font-semibold text-neutral-700 dark:text-neutral-300">Example change prompt</div>
+<div class="prompt-copy-wrapper relative mt-3 max-w-4xl">
+<button class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-900/85 px-3 py-1 text-xs font-semibold text-neutral-200 backdrop-blur transition hover:bg-neutral-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950" data-copy-prompt="true" type="button"><i class="h-3.5 w-3.5" data-lucide="copy"></i><span>Copy prompt</span></button>
+<pre class="overflow-x-auto rounded-xl bg-neutral-950 p-5 pr-28 font-mono text-sm leading-[165%] text-neutral-200"><code>Update the Zynk Design System section “[SECTION NAME]”.
+
+Change requested: [DESCRIBE THE CHANGE]
+Reason: [WHY THE CHANGE IMPROVES CONSISTENCY OR USABILITY]
+Example/reference: [OPTIONAL SCREENSHOT, PAGE OR COMPONENT]
+
+Update the HTML visual guide, machine-readable Markdown and Zynk Design System Skill together. Keep the existing design rules unless this request explicitly changes them, bump the version and timestamp, and keep the table of contents synchronized.</code></pre>
+</div>
 </div>
 </section>
 </main>
@@ -1125,5 +1855,122 @@
   window.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   });
-</script></body>
+</script><script data-copy-prompts="true">
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-copy-prompt]');
+    if (!button) return;
+
+    const wrapper = button.closest('.prompt-copy-wrapper');
+    const code = wrapper ? wrapper.querySelector('pre code') : null;
+    if (!code) return;
+
+    const text = code.innerText.trim();
+    const label = button.querySelector('span');
+    const original = label ? label.textContent : 'Copy prompt';
+
+    try {
+      await navigator.clipboard.writeText(text);
+      if (label) label.textContent = 'Copied';
+      button.classList.add('bg-orange-500', 'border-orange-500', 'text-white');
+      setTimeout(() => {
+        if (label) label.textContent = original;
+        button.classList.remove('bg-orange-500', 'border-orange-500', 'text-white');
+      }, 1400);
+    } catch (error) {
+      if (label) label.textContent = 'Select text';
+      setTimeout(() => {
+        if (label) label.textContent = original;
+      }, 1400);
+    }
+  });
+</script><script id="workflowGridScript">
+(function () {
+  const table = document.getElementById('workflowTable');
+  if (!table) return;
+  const tbody = document.getElementById('workflowRows');
+  const search = document.getElementById('workflowSearch');
+  const status = document.getElementById('workflowStatusFilter');
+  const clear = document.getElementById('workflowClearFilters');
+  const count = document.getElementById('workflowResultCount');
+  const empty = document.getElementById('workflowEmpty');
+  const sortButtons = [...document.querySelectorAll('.workflow-sort')];
+  let sortKey = 'updated';
+  let sortDirection = 'asc'; // lower minutes = most recent first
+
+  function rows() { return [...tbody.querySelectorAll('.workflow-row')]; }
+  function value(row, key) {
+    if (key === 'records' || key === 'updated') return Number(row.dataset[key]);
+    return (row.dataset[key] || '').toLowerCase();
+  }
+  function updateSortState() {
+    sortButtons.forEach((button) => {
+      const th = button.closest('th');
+      const active = button.dataset.sort === sortKey;
+      th.setAttribute('aria-sort', active ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none');
+      button.classList.toggle('text-orange-600', active);
+      button.classList.toggle('dark:text-orange-400', active);
+    });
+  }
+  function apply() {
+    const term = search.value.trim().toLowerCase();
+    const filter = status.value;
+    const ordered = rows().sort((a, b) => {
+      const av = value(a, sortKey), bv = value(b, sortKey);
+      if (av < bv) return sortDirection === 'asc' ? -1 : 1;
+      if (av > bv) return sortDirection === 'asc' ? 1 : -1;
+      return 0;
+    });
+    ordered.forEach(row => tbody.appendChild(row));
+
+    let visible = 0;
+    ordered.forEach((row) => {
+      const matchesSearch = !term || row.dataset.workflow.toLowerCase().includes(term) || row.dataset.status.includes(term);
+      const matchesStatus = filter === 'all' || row.dataset.status === filter;
+      const show = matchesSearch && matchesStatus;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    count.textContent = `${visible} workflow${visible === 1 ? '' : 's'}`;
+    empty.classList.toggle('hidden', visible !== 0);
+    table.classList.toggle('hidden', visible === 0);
+    updateSortState();
+  }
+  search.addEventListener('input', apply);
+  status.addEventListener('change', apply);
+  clear.addEventListener('click', () => { search.value=''; status.value='all'; apply(); search.focus(); });
+  sortButtons.forEach(button => button.addEventListener('click', () => {
+    const key = button.dataset.sort;
+    if (sortKey === key) sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    else { sortKey = key; sortDirection = key === 'updated' ? 'asc' : 'asc'; }
+    apply();
+  }));
+  apply();
+})();
+</script><script id="sectionJumpScript">(function () {
+  const select = document.getElementById('sectionJump');
+  if (!select) return;
+
+  select.addEventListener('change', () => {
+    if (!select.value) return;
+    const target = document.getElementById(select.value);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', `#${select.value}`);
+    }
+  });
+
+  const sections = [...select.options]
+    .map(option => document.getElementById(option.value))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (visible) select.value = visible.target.id;
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+    sections.forEach(section => observer.observe(section));
+  }
+})();</script></body>
 </html>
